@@ -1,0 +1,32 @@
+<pl-question-panel>
+    <h1>Timer Modes</h1>
+    <p>
+        Briefly describe each Timer mode given in Datasheet Table 11.3 (or Textbook Table 9.1).
+        <ul>
+            <li>One Shot Mode</li>
+            <li>Periodic Mode</li>
+            <li>RTC Mode</li>
+            <li>Edge Count Mode</li>
+            <li>Edge Time Mode</li>
+            <li>PWM Mode</li>
+        </ul>
+    </p>
+</pl-question-panel>
+
+<pl-rich-text-editor file-name="answer.html"></pl-rich-text-editor>
+
+<pl-answer-panel>
+    <ul>
+        <li><b>One Shot Mode</b>: If in count down mode the counter starts from the loaded value and stops once it reaches 0. In count up mode the counter starts from 0 and stops when it reaches the loaded value. In count down mode the prescaleris used as a proper prescaler, in count up mode it extends a 16-bit counter to 24-bits.</li>
+        <li><b>Periodic Mode</b>: The same behavior as One Shot Mode, with the major difference being the timer does not stop. If in count up mode, then when it reaches the max value (i.e. loaded value), it wraps around to 0 and continues counting. If in count down mode, then when it reaches 0 it wraps back to the max value (i.e. loaded value) and continues counting.</li>
+        <li><b>RTC Mode</b>: The counter is configured with a specific clock rate that makes each tick of the Timer 1 second.</li>
+        <li><b>Edge Count Mode</b>: Increments the counter whenever an edge of an input signal occurs (i.e. count positive, negative, or both edges).</li>
+        <li><b>Edge Time Mode</b>: Allows the counter to capture the time at which the edge of an input signal occurs (i.e. capture the time of positive and/or negative edges of the input signal). Also called "Input Capture."</li>
+        <li><b>PWM Mode</b>: Allows one to generate a PWM wave efficiently</li>
+    </ul>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>
+

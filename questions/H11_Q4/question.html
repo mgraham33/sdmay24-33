@@ -1,0 +1,16 @@
+<pl-question-panel>
+    <h1>MOVW vs MOVT</h1>
+</pl-question-panel>
+<p>
+    What is the value of R1 after the following code is run?
+</p>
+<pl-code>
+MOVW R1, #0x{{params.w}}
+MOVT R1, #0x{{params.t}}
+</pl-code>
+
+<p><pl-integer-input base="16" answers-name="r1" label="R1 = 0x" placeholder="hexadecimal"></pl-integer-input></p>
+
+<pl-answer-panel>
+    <p>This is because MOVW places the 16 bit immediate value into the BOTTOM 16 bits of the register, while MOVT places the immediate into the TOP 16 bits.</p>
+</pl-answer-panel>

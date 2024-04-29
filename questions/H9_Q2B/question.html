@@ -1,0 +1,26 @@
+<pl-question-panel>
+  <p>Describe two disadvantages of your software-implemented input capture program has compared to using Input
+    Capture hardware with Interrupts. *add Data Sheet</p>
+</pl-question-panel>
+
+<p>Does not allow other parts of the code to run, while it is running.</p>
+<pl-multiple-choice answers-name="1" weight="1">
+  <pl-answer correct="true">True</pl-answer>
+  <pl-answer correct="false">False</pl-answer>
+</pl-multiple-choice>
+<br>
+
+<p>With the "software only" approach an interrupt could occur after detecting a positive edge, but before the TIMER
+  value is read. Thus adding to the error of when the positive edge occurred.</p>
+<pl-multiple-choice answers-name="2" weight="1">
+  <pl-answer correct="true">True</pl-answer>
+  <pl-answer correct="false">False</pl-answer>
+</pl-multiple-choice>
+
+<br>
+<p>The Input Capture hardware stores the value of TCNT as soon as the event occurs, while the software implementation
+  will have error related to where in the polling loop the code is when the positive edge occurs</p>
+<pl-multiple-choice answers-name="3" weight="1">
+  <pl-answer correct="true">True</pl-answer>
+  <pl-answer correct="false">False</pl-answer>
+</pl-multiple-choice>

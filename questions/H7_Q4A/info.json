@@ -1,0 +1,12 @@
+{
+    "uuid": "66a829fe-cc6c-4301-8c5b-7cef9a2e292a",
+    "title": "Falling Edge Detector",
+    "topic": "UART",
+    "tags": [
+        "sdmay24-33",
+        "wmhudson"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "Manual"
+}

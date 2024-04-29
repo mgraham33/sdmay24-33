@@ -1,0 +1,30 @@
+<pl-question-panel>
+  <p>
+      Match each timer mode description given Datasheet Table 11.3 (or Textbook Table 9.1) *put data sheet in
+  </p>
+</pl-question-panel>
+
+<pl-matching answers-name="ex1">
+  <pl-statement match="If in count down mode the counter starts from the loaded value and stops once it reaches 0. 
+  In count up mode the counter starts from 0 and stops when it reaches the loaded value. In count down mode the prescaler is used as a proper perscaler, 
+  in count up mode it extends a 16-bit counter to 24-bits
+">One shot mode</pl-statement>
+
+  <pl-statement match="The same behavior as One shot mode, with the major difference being the timer does not stop. 
+  If in count up mode, then when it reaches its max value (i.e. loadedvalue) it goes back to 0 and continues counting. If in count down mode, 
+  then when it reaches 0 it goes back to its max value (i.e. loaded value) and continues counting">Periodic mode</pl-statement>
+
+  <pl-statement match="The counter is configured with a specific clock rate, that makes each tick of the Timer 1 second.">RTC mode</pl-statement>
+
+  <pl-statement match=" Allow counter each time an edge of an input signal occurs (i.e. countpositive, negative, or both edges)">Edge Count mode</pl-statement>
+
+  <pl-statement match="Allows the counter to capture the time at which the edge of an input signal occurs 
+  (i.e. capture the time of positive and/or negative edges of the input signal). Also called Input Capture.">Edge Time mode</pl-statement>
+  
+  <pl-statement match="Allows one to generate a PWM wave efficiently">PWM mode</pl-statement>
+  
+  
+  <pl-option>extra wrong example</pl-option>
+  <pl-option>extra wrong example</pl-option>
+  <pl-option>extra wrong example</pl-option>
+</pl-matching>

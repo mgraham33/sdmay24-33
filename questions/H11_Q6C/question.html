@@ -1,0 +1,18 @@
+<pl-question-panel>
+    <h1>Assembly Basics</h1>
+</pl-question-panel>
+<p>
+    It is possible to encode MOV as a 16-bit instruction, but why must MOVW be encoded as a larger than 16-bit instruction?
+</p>
+
+<pl-rich-text-editor file-name="answer.html"></pl-rich-text-editor>
+
+<pl-answer-panel>
+    <p>
+        MOVW must have more than 16 bits for its encoding because the encoding needs at least 16 bits just for the immediate constant being moved into the destination register.
+    </p>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

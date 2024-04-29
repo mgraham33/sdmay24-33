@@ -1,0 +1,41 @@
+{
+    "uuid": "8a507637-58a5-4659-b146-1c757a812493",
+    "type": "Homework",
+    "title": "Embedded Systems Basics",
+    "set": "Homework",
+    "module": "IntroModule",
+    "number": "1",
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2023-10-14T00:00:01",
+            "endDate": "9999-04-01T23:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Embedded Systems Intro",
+            "questions": [
+                {"id": "H1_Q2a", "points": 0, "maxPoints": 5},
+                {"id": "H1_Q2b", "points": 0, "maxPoints": 5},
+                {"id": "H1_Q5", "points": 0, "maxPoints": 5}
+            ]
+        },
+        {
+            "title": "Prerequisite Review",
+            "questions": [
+                {"id": "H1_Q3a", "points": 0, "maxPoints": 5},
+                {"id": "H1_Q3b", "points": 0, "maxPoints": 5},
+                {"id": "H1_Q3c", "points": 0, "maxPoints": 5}
+            ]
+        },
+        {
+            "title": "C Review",
+            "questions": [
+                {"id": "H1_Q1", "points": 0, "maxPoints": 5},
+                {"id": "H1_Q4", "points": 0, "maxPoints": 5}
+            ]
+        }
+    ]
+}

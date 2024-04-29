@@ -1,0 +1,18 @@
+{
+    "uuid": "648eef79-86d7-48d6-b1b5-255d64a8d376",
+    "title": "Using the Motors",
+    "topic": "Timers",
+    "tags": [
+        "sdmay24-33",
+        "wmhudson"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

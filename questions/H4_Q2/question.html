@@ -1,0 +1,227 @@
+<pl-question-panel>
+    <h1>Microcontroller GPIO Exploration</h1>
+    <p>a)</p>
+</pl-question-panel>
+
+<pl-question-panel>
+    <!-- <p>
+        For PORTC of our microcontroller, what value would you set the following register to in order to have its clock enabled, and bits (wires) 0 – 3 Digitally enabled for {{params.wires0-3}}, and bits (wires) 4 -7 Digitally enabled for {{params.wires4-7}}. Assume all other PORTs (i.e.
+        A,B,D,E,F) have their clocks disabled.
+    </p> -->
+    <p>
+        For PORT{{params.port}} of our microcontroller, what value would you set the following register to in order to have its clock enabled, and bits (wires) {{params.input}} Digitally enabled for Input, and bits (wires) {{params.output}} Digitally enabled for Output. Assume all other PORTs (i.e.
+        A,B,C,D,E,F) have their clocks disabled.
+    </p>
+</pl-question-panel>
+
+<table>
+    <tr>
+        <td>
+            SYSCTL_RCGCGPIO_R =
+        </td>
+        <td>
+            <pl-integer-input answers-name="SYSCTL_RCGCGPIO_R" base="2" allow-blank=true></pl-integer-input>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{params.den}} =
+        </td>
+        <td>
+            <pl-integer-input answers-name="GPIO_PORT_DEN_R" base="2" allow-blank=true></pl-integer-input>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{params.dir}} = 
+        </td>
+        <td>
+            <pl-integer-input answers-name="GPIO_PORT_DIR_R" base="2" allow-blank=true></pl-integer-input>
+        </td>
+    </tr>
+</table>
+<br><br>
+<pl-question-panel>
+    <p>
+        b) Scan Chapter 22 and 23 of TM4C123G Datasheet. Give the Digital and Analog Function options of Alternative functions for each GPIO Port’s wire requested:
+    </p>
+    <p><b>Example:</b></p>
+    <!-- <p>The first image below is the entry for Port F, Wire 2 (PF2) from the GPIO datasheet found in Table 10-2 on Page 651 of Chapter 10.2.</p> -->
+    <!-- <br>
+    <pl-figure file-name={{params.picture1}} directory="clientFilesQuestion"></pl-figure>
+    <br> -->
+    <p>The image below corresponds to the entry for Port F, Wire 2 (PF2) from on the GPIO datasheet found in Chapter 10. The image shows the proper format to enter the Digital and Analog Functions into the correct answer fields for Port F, Wire 2 (PF2) in the section below.</p>
+    <!-- <p>The second image below shows the proper format to enter the Digital and Analog Functions into the correct answer fields for Port F, Wire 2 (PF2) in the section below.</p> -->
+    <pl-figure file-name={{params.picture2}} directory="clientFilesQuestion"></pl-figure>
+    <br>
+    <p>Give your answers in the order they appear in the datasheet.</p>
+</pl-question-panel>
+
+<table>
+    <tr>
+        <td>
+            1. {{params.b4}}
+        </td>
+        <td>
+            <pl-string-input answers-name="b4_1" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b4_2" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b4_3" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b4_4" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            2. {{params.b2}}
+        </td>
+        <td>
+            <pl-string-input answers-name="b2_1" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b2_2" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr>
+    <!-- <tr>
+        <td>
+            3. {{params.b7}}
+        </td>
+        <td>
+            <pl-string-input answers-name="b7_1" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b7_2" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b7_3" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <pl-string-input answers-name="b7_4" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b7_5" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b7_6" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b7_7" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr> -->
+    <tr>
+        <!-- <td>
+            4. {{params.b3}}
+        </td> -->
+        <td>
+            3. {{params.b3}}
+        </td>
+        <td>
+            <pl-string-input answers-name="b3_1" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b3_2" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b3_3" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr>
+    <!-- <tr>
+        <td>
+            5. {{params.b6}}
+        </td>
+        <td>
+            <pl-string-input answers-name="b6_1" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b6_2" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b6_3" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b6_4" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <pl-string-input answers-name="b6_5" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b6_6" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr> -->
+    <tr>
+        <!-- <td>
+            6. {{params.b1}}
+        </td> -->
+        <td>
+            4. {{params.b1}}
+        </td>
+        <td>
+            <pl-string-input answers-name="b1" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr>
+    <!-- <tr>
+        <td>
+            7. {{params.b5}}
+        </td>
+        <td>
+            <pl-string-input answers-name="b5_1" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b5_2" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b5_3" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b5_4" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <pl-string-input answers-name="b5_5" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr> -->
+    <!-- <tr>
+        <td>
+            8. {{params.b8}}
+        </td>
+        <td>
+            <pl-string-input answers-name="b8_1" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b8_2" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b8_3" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b8_4" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <pl-string-input answers-name="b8_5" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b8_6" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b8_7" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+        <td>
+            <pl-string-input answers-name="b8_8" size="5" allow-blank=true ignore-case=true></pl-string-input>
+        </td>
+    </tr> -->
+</table>

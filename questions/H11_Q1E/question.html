@@ -1,0 +1,44 @@
+<pl-question-panel>
+    <h1>General ARM Assembly</h1>
+</pl-question-panel>
+<p>
+    Give a brief description of each of the seven addressing modes.
+</p>
+
+<pl-rich-text-editor file-name="answer.html"></pl-rich-text-editor>
+
+<pl-answer-panel>
+    <p>
+        <b>Immediate Offset Addressing Mode</b>: The location loaded from or stored to is the value of a
+        "base-address" register, plus the value of a constant. Additionally, the "base-address" register
+        can optionally be incremented or decremented after the load / store completes.
+    </p>
+    <p>
+        <b>Regsister Offset Addressing Mode</b>: The location loaded from or stored to is the value of a
+        "base-address" register, plus the value of an "offset" register.
+    </p>
+    <p>
+        <b>PC-Relative Addressing Mode</b>: The location loaded from or stored to is the value in the PC
+        register +/- a constant value.
+    </p>
+    <p>
+        <b>Load / Store Multiple Registers Addressing Mode</b>: Loads or stores a list of registers from
+        or to a sequential location in Data Memory.
+    </p>
+    <p>
+        <b>PUSH and POP Register Addressing Mode</b>: PUSH and POP are used to place or remove data from
+        the top of the stack, which is located in Data Memory.
+    </p>
+    <p>
+        <b>Load / Store Exclusive Addressing Mode</b>: A mode that is used to help guarantee one process
+        at a time is accessing a register (typically used for multi-process systems)
+    </p>
+    <p>
+        <b>Inherent Addressing Mode</b>: Not really an addressing mode, just means that register names 
+        are specified as inputs to be operated on (i.e. Data Memory is not accessed).
+    </p>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

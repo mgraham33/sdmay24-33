@@ -1,0 +1,49 @@
+<pl-question-panel>
+    <h1>Binary Operators</h1>
+    <h2>Part 2</h2>
+    <p>
+        In each of the following functions, write code in the TODO section to perform the desired action.<br>
+        <br>
+        Do not write code outside of the TODO region. Formatting is fine, but extra semicolons will be counted against you.
+    </p>
+</pl-question-panel>
+<div style="display:none;"><pl-code></pl-code></div> <!-- Hacky fix for glitchy pl-code element in pl-answer-panel -->
+<p>
+    <b>Set the CAMERA_CONFIG register:</b><br>
+    Assume the camera is currently set for 1280x1024 resolution.<br>
+    Update the camera to a 100x100 resolution.<br>
+    Preserve the other bits in the register.
+</p>
+<p><pl-string-input answers-name="q1" label="CAMERA_CONFIG = " suffix=";"></pl-string-input></p>
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+CAMERA_CONFIG = CAMERA_CONFIG & 0xCF;</pl-code>
+</pl-answer-panel>
+<br>
+<p>
+    <b>Check the CAMERA_DATA register:</b><br>
+    Assume it just received a new color pixel. <br>
+    Check if any of the color components (Red, Green, Blue) have their LEAST significant bit set to 1.
+</p>
+<p><pl-string-input answers-name="q2" label="if (" suffix=")"></pl-string-input></p>
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+if (CAMERA_DATA & 0x25)</pl-code>
+</pl-answer-panel>
+<br>
+<p>
+    <b>Set the CAMERA_CONFIG register:</b><br>
+    Set the speed to {{params.speed}} FPS<br>
+    Set the resolution to {{params.resolution}}<br>
+    Enable the camera<br>
+    Preserve all other bits.
+</p>
+<p><pl-string-input answers-name="q3" label="CAMERA_CONFIG = " suffix=";"></pl-string-input></p>
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+CAMERA_CONFIG = (CAMERA_CONFIG | {{params.maskones_c}}) & {{params.maskzeroes_c}};</pl-code>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+</pl-submission-panel>

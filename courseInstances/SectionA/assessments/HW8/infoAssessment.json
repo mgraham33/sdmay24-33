@@ -1,0 +1,49 @@
+{
+    "uuid": "7c82bfeb-547f-4095-8680-4ac281280e26",
+    "type": "Homework",
+    "title": "ADC and Timers",
+    "set": "Homework",
+    "module": "EmbeddedIntermediate",
+    "number": "8",
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2024-10-14T00:00:01",
+            "endDate": "9999-04-01T23:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "ADC",
+            "questions": [
+                {
+                    "id": "H8_Q1A",
+                    "points": 2,
+                    "maxPoints": 10
+                },
+                {
+                    "id": "H8_Q1BC",
+                    "points": 2,
+                    "maxPoints": 10
+                },
+                {
+                    "id": "H8_Q1D",
+                    "points": 2,
+                    "maxPoints": 10
+                }
+            ]
+        },
+        {
+            "title": "Timer Basics",
+            "questions": [
+                {
+                    "id": "H8_Q2",
+                    "points": 2,
+                    "maxPoints": 10
+                }
+            ]
+        }
+    ],
+    "text": "<p>ADC Readings</p><ul> <li><b>SKIP</b> the following: <ul> <li>Section 13.3.2.2: DMA</li> <li>Section 13.3.2.3: Prioritization</li> <li>Sections 13.3.2.6 - 13.3.3: Sample Phase Control - Hardware Sample Averaging</li> <li>Sections 13.3.5 - 13.3.7: Differential Sampling - Digital Compart Unit</li> </ul> </li> <li><b>Important</b> registers: <ul> <li>Register 1: ADC Active Sample Sequencer (ADCACTSS): ADC#_ACTSS_R</li> <li>Register 2: ADC Raw Interrupt Status (ADCRIS): ADC#_RIS_R</li> <li>Register 3: ADC Interrupt Mask (ADCIM): ADC#_IM_R</li> <li>Register 4: ADC Interrupt Status and Clear (ADCISC): ADC#_ISC_R</li> <li>Register 6: ADC Event Multiplexer Select (ADCEMUX) : ADC#_EMUX_R <ul> <li>Only settings 0x0 and 0xF</li> </ul> </li> <li>Register 11: ADC Processor Sample Sequence Initiate (ADCPSSI): ADC#_SSPRI_R</li> <li>Register 15,27,28,35: ADC Sample Sequence Input Multiplexer Select (0-3) (ADCSSMUX0-3): ADCn_SSMUX#_R</li> <li>Register 16,29,30,36: ADC Sample Sequence Control(0-3) (ADCSSCTL0-3): ADCn_SSCTL#_R</li> <li>Register 17-20: ADC Sample Sequence Result FIFO(0-3) (ADCSSFIFO0-3): ADC#_SSFIFO#_R</li> <li>Register 58: ADC Clock Configuration (ADCCC): ADC#_CC_R (Only setting 0x0)</li> <li>Sec 5.5, page 352: Register 68: Analog-to-Digital Converter Run Mode Clock Gating Control (RCGCADC): SYSCTL_RCGCADC_R</li> </ul> </li> <li><b>Textbook 7.5</b>: for a good supplement to the Datasheet. Read as needed (~30 pages) <ul> <li><b>NOTE</b>: Figure <b>7.8</b> is VERY useful and IMPORTANT</li> <li><b>NOTE</b>: First 10 pages give a quick summary of operation</li> <li><b>NOTE</b>: In Figure 7.8, there is no register ADCSSEMUX for the Sample Sequencer</li> <li><b>NOTE</b>: There is also a nice application example (<b>Figure 7.29</b>)</li> </ul> </li></ul><p>Timer Readings</p><ul> <li><b>SKIP</b> the following: <ul> <li>Section 11.3.2.2: Real-Time Clock Timer Mode</li> <li>Section 11.3.2.3: Input Edge-Count Mode</li> <li>Sections 11.3.3 - 11.3.5: Wait-for-trigger Mode, Synchronizing GP Timer Blocks, DMA</li> <li>Section 11.3.7: Accessing Concatenated 32/64-bit Wide GPTM Register Values</li> </ul> </li> <li><b>IMPORTANT</b> registers: <ul> <li>Register 1: GPTM Configuration (GPTMCFG): TIMER#_CFG_R</li> <li>Register 2, 3: GPTM Timer A(B) Mode (GPTMTA(B)MR): TIMER#_TA(B)MR_R</li> <li>Register 4: GPTM Control (GPTMCTL): TIMER#_CTL_R</li> <li>Register 6: GPTM Interrupt Mask (GPTMIMR): TIMER#_IMR_R</li> <li>Register 7: GPTM Raw Interrupt Status Mask (GPTMRIS): TIMER#_RIS_R</li> <li>Register 8: GPTM Masked Interrupt Status (GPTMMIS): TIMER#_MIS_R</li> <li>Register 9: GPTM Interrupt Clear (GPTMICR): TIMER#_ICR_R</li> <li>Register 10, 11: GPTM Timer A(B) Interval Load (GPTMTA(B)ILR): TIMER#_TA(B)ILR_R</li> <li>Register 12, 13: GPTM Timer A(B) Match (GPTMTA(B)MATCHR): TIMER#_TA(B)MATCHR_R</li> <li>Register 14, 15: GPTM Timer A(B) Prescale (GPTMTA(B)PR): TIMER#_TA(B)PR_R</li> <li>Register 16, 17: GPTM Timer A(B) Prescale Match (GPTMTA(B)PMR): TIMER#_TA(B)PMR_R</li> <li>Register 18, 19: GPTM Timer A(B) (GPTMTA(B)R): TIMER#_TA(B)R_R</li> <li>Register 20, 21: GPTM Timer A(B) Value (GPTMTA(B)V): TIMER#_TA(B)V_R</li> <li>Section 5.5, page 338: Register 59: GP Timer Run Mode Clk Gating Control: SYSCTL_RCGCTIMER_R</li> </ul> </li> <li><b>Textbook 9.1 - 9.2</b>: a good supplement to the Datasheet, as needed (~30 pages) <ul> <li>Note: Figure 9.1 is useful</li> <li>Note: Figure 9.10 is a useful Periodic Timer code example.</li> <li>Note: Figure 9.14 is a useful Input-Edge Time Mode (Input capture) code example.</li> <li>Note: Figure 9.17 is a useful PMW Mode code example.</li> </ul> </li></ul>"
+}

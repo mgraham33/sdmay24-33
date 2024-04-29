@@ -1,0 +1,39 @@
+{
+    "uuid": "727dadc7-6f6f-4b59-b349-054998d662de",
+    "type": "Homework",
+    "title": "Embedded C Basics",
+    "set": "Homework",
+    "module": "EmbeddedBasics",
+    "number": "2",
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2023-10-14T00:00:01",
+            "endDate": "9999-04-01T23:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Storing Data",
+            "questions": [
+                {"id": "H2_Q1", "points": 2, "maxPoints": 10},
+                {"id": "H2_Q3","points": 2, "maxPoints": 10}
+            ]
+        },
+        {
+            "title": "C Strings",
+            "questions": [
+                {"id": "H2_Q2", "points": 2, "maxPoints": 10},
+                {"id": "H2_Q4", "points": 2,"maxPoints": 10}
+            ]
+        },
+        {
+            "title": "C Programming Practice",
+            "questions": [
+                {"id": "H2_Q5","points": 2,"maxPoints": 10}
+            ]
+        }
+    ],
+    "text": "<p><strong>Comments about this assessment:</strong></p> </p><p><strong>Zone 1</strong> includes examples of lower level questions that involve nearly automatic responses. As such, we use the drilling for mastery configuration (PrairieLearn default for homework), where students can create unlimited question variants, each one with a single attempt. Read more <a href=https://github.com/PrairieLearn/PrairieLearn/blob/master/exampleCourse/courseInstances/SectionA/assessments/homework/template/__docs/docs.md/#Drilling-basic-skills-using-unlimited-variants-with single-attempt target=_blank>here</a>.</p> <p><strong>Zone 2</strong> includes examples of more sophisticated questions that often involve more than one step to achieve the solution. These questions allow students to retry the same question variant more than once, before creating a new variant. Read more <a href=https://github.com/PrairieLearn/PrairieLearn/blob/master/exampleCourse/courseInstances/SectionA/assessments/homework/template/__docs/docs.md/#Limiting-the-number-of-attempts-per-variant target=_blank>here</a>.</p><p><strong>Zone 3</strong> includes a coding question that involve multiple skills levels (lower to high) and several steps to obtain the solution. Students receive only one variant of the question and have unlimited attempts to complete it successfuly. Read more <a href=https://github.com/PrairieLearn/PrairieLearn/blob/master/exampleCourse/courseInstances/SectionA/assessments/homework/template/__docs/docs.md/#Unlimited-retry-attempts-for-the-same-question-variant target=_blank>here</a>.</p>"
+}

@@ -1,0 +1,14 @@
+{
+    "uuid": "6664b247-5d93-4b33-8a85-37fe19fec3b3",
+    "title": "ADC Temperature Reading",
+    "topic": "ADC",
+    "tags": [
+        "awinters",
+        "weberski",
+        "wmhudson",
+        "fa23"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "Internal"
+}

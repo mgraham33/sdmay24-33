@@ -1,0 +1,25 @@
+<pl-question-panel>
+    <h1>Interrupt-based Device Interaction</h1>
+    <p>
+        Using interrupts and "One Shot Mode," complete 'CAMERA_HANDLER()' and 'student_main()' so that each time a pixel of data is ready to be read:
+        <ul>
+            <li>The ISR increments the number of pixels that have been read</li>
+            <li>'student_main()' calls <b>print_pixel_count()</b> exactly once each time the ISR has indicated a new pixel is ready to be read</li>
+        </ul>
+    </p>
+    <p>
+        Declare additional variables you believe you need (hint: you will likely need a variable for counting pixels and one for indicating a pixel is ready to be read)
+    </p>
+    <p><i>Note: The 'print_pixel_count()' function takes one argument: an int of the number of pixels that have been read.</i></p>
+</pl-question-panel>
+
+<pl-file-editor
+    file-name="student.c"
+    source-file-name="template.c"
+    ace-mode="ace/mode/c_cpp"
+></pl-file-editor>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

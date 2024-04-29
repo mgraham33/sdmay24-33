@@ -1,0 +1,18 @@
+{
+    "uuid": "954697f5-7e9d-4c0b-b568-c95556094fed",
+    "title": "Hardware Implemented UART",
+    "topic": "UART",
+    "tags": [
+        "sdmay24-33",
+        "wmhudson"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

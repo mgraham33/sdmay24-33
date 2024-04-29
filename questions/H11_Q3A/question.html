@@ -1,0 +1,80 @@
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 2px;
+    }
+</style>
+
+<pl-question-panel>
+    <h1>Status Register</h1>
+    <p>
+        Complete the below table by computing the binary values for a, b, and a + b, as well as the Z, C, and N flags of the status register for each computation.
+    </p>
+</pl-question-panel>
+
+<table>
+    <tr>
+        <th>a</th>
+        <td>{{params.a_0}}</td>
+        <td>{{params.a_1}}</td>
+        <td>{{params.a_2}}</td>
+        <td>{{params.a_3}}</td>
+    </tr>
+    <tr>
+        <th>b</th>
+        <td>{{params.b_0}}</td>
+        <td>{{params.b_1}}</td>
+        <td>{{params.b_2}}</td>
+        <td>{{params.b_3}}</td>
+    </tr>
+    <tr>
+        <th>a</th>
+        <td><pl-integer-input allow-blank="true" answers-name="a_0" base="2" label="0b" placeholder="binary" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="a_1" base="2" label="0b" placeholder="binary" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="a_2" base="2" label="0b" placeholder="binary" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="a_3" base="2" label="0b" placeholder="binary"></pl-integer-input></td>
+    </tr>
+    <tr>
+        <th>b</th>
+        <td><pl-integer-input allow-blank="true" answers-name="b_0" base="2" label="0b" placeholder="binary" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="b_1" base="2" label="0b" placeholder="binary" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="b_2" base="2" label="0b" placeholder="binary" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="b_3" base="2" label="0b" placeholder="binary"></pl-integer-input></td>
+    </tr>
+    <tr>
+        <th>a+b</th>
+        <td><pl-integer-input allow-blank="true" answers-name="apb_binary_0" base="2" label="0b" placeholder="binary" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="apb_binary_1" base="2" label="0b" placeholder="binary" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="apb_binary_2" base="2" label="0b" placeholder="binary" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="apb_binary_3" base="2" label="0b" placeholder="binary"></pl-integer-input></td>
+    </tr>
+    <tr>
+        <th>a+b</th>
+        <td><pl-integer-input allow-blank="true" answers-name="apb_decimal_0" placeholder="decimal" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="apb_decimal_1" placeholder="decimal" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="apb_decimal_2" placeholder="decimal" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="apb_decimal_3" placeholder="decimal"></pl-integer-input></td>
+    </tr>
+    <tr>
+        <th>Z</th>
+        <td><pl-integer-input allow-blank="true" answers-name="z_0" base="2" placeholder="0 or 1" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="z_1" base="2" placeholder="0 or 1" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="z_2" base="2" placeholder="0 or 1" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="z_3" base="2" placeholder="0 or 1"></pl-integer-input></td>
+    </tr>
+    <tr>
+        <th>C</th>
+        <td><pl-integer-input allow-blank="true" answers-name="c_0" base="2" placeholder="0 or 1" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="c_1" base="2" placeholder="0 or 1" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="c_2" base="2" placeholder="0 or 1" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="c_3" base="2" placeholder="0 or 1"></pl-integer-input></td>
+    </tr>
+    <tr>
+        <th>N</th>
+        <td><pl-integer-input allow-blank="true" answers-name="n_0" base="2" placeholder="0 or 1" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="n_1" base="2" placeholder="0 or 1" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="n_2" base="2" placeholder="0 or 1" show-help-text="false"></pl-integer-input></td>
+        <td><pl-integer-input allow-blank="true" answers-name="n_3" base="2" placeholder="0 or 1"></pl-integer-input></td>
+    </tr>
+</table>

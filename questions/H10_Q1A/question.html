@@ -1,0 +1,113 @@
+<pl-question-panel>
+    <h1>Don't Go into the Light! - Timer Initialization</h1>
+    <p>
+        Complete the program below to have a robot move away from a light source.
+        The robot has two wheels, similar to the robot used in lab, and has a light sensor on each side. See figure.
+    </p>
+    <p>
+        <b>Motor Control:</b> Assume that you are programming Timer 1 module A (for the left motor) and
+        Timer 1 module B (for the right motor) to generate PWM waveforms to control the speed of each wheel's
+        motor (<b>note, connect Timer 1 to Port B</b>). The speed of the motor is proportional to the percentage
+        of time the PWM signal is high (i.e. PWM duty cycle).
+    </p>
+    <p>Note: Your PWM wave must have a period of <b>1 ms</b>. Note the system clock is 16 MHz.</p>
+    <p>
+        <b>Light Sensors:</b> The light sensors are connected to <b>Channel 1</b> (left sensor) and <b>Channel 9</b> (right sensor)
+        of the ADC as single channel inputs (i.e. not differential). You should use <b>Sample Sequencer 0</b>.
+    </p>
+    <p>
+        <b>Robot Behavior:</b> The Robot should move away from the light in the following way. Where 
+        "Speed of motor" is the fraction of the motor's maximum speed:
+        <ul>
+            <li>Speed of left motor = Intensity of left sensor / (Intensity of left sensor + Intensity of right sensor)</li>
+            <li>Speed of right motor = Intensity of right sensor / (Intensity of left sensor + Intensity of right sensor)</li>
+        </ul>
+    </p>
+    <pl-figure file-name="robot_diagram.png"></pl-figure>
+    <br>
+    <p>Below is the main code to show you how the functions are used.</p>
+    <pl-code language="c">
+int main() {
+    int left_sensor;
+    int right_sensor;
+    int left_motor; 
+    int right_motor;
+
+    init_TIMER1_A_B();
+    init_ADC();
+
+    while (1) {
+        get_sensor_reading(&left_sensor, &right_sensor);
+
+        compute_motor_values(left_sensor, right_sensor, &left_motor, &right_motor);
+
+        set_motor_speed(left_motor, right_motor);
+    }
+}
+    </pl-code>
+        
+</pl-question-panel>
+
+<pl-file-editor
+    file-name="initialize.c"
+    ace-mode="ace/mode/c_cpp"
+>
+#include "/grade/tests/student.h" // Required to compile. Links your code to the grader.
+
+/**
+ * Initialize the TIMER 1 modules A and B to meet the above requirements and so that both wheels initially move at 50% their maximum speed.
+ *
+ * NOTE: use the method 'wait_timer_disable()' after disabling the timer during configuration, otherwise you will miss points!
+ */
+void init_TIMER1_A_B() {
+    // TODO
+}
+</pl-file-editor>
+
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+// Setup GPIO
+// Enable Port B clock
+SYSCTL_RCGCGPIO_R |= 0x2;
+
+// Enable alternate function and set peripheral functionality
+GPIO_PORTB_AFSEL_R |= 0x30;         // Timer 1A & B on bits 4 & 5
+GPIO_PORTB_PCTL_R |= 0x770000;      // Use Timer for wire 4 & 5
+
+// Set digital or analog mode and pin directions
+GPIO_PORTB_DEN_R |= 0x30;           // Enable pins 4 & 5 digital mode
+GPIO_PORTB_DIR_R |= 0x30;           // Set pin 4 & 5 to output
+
+// Configure Timer 1 mode
+SYSCTL_RCGCTIMER_R |= 0x2;          // Enable Timer 1's clock
+
+// Disable Timer 1A and 1B during setup
+TIMER1_CTL_R &= ~0x101;
+wait_timer_disable();               // Required for auto-grader
+
+// Configure Timer 1 functionality
+TIMER1_CFG_R = 0x4;                 // Set to 16-bit mode
+TIMER1_TAMR_R = 0xa;                // Timer 1A: PWM, Periodic mode
+TIMER1_TBMR_R = 0xa;                // Timer 1B: PWM, Periodic mode
+
+TIMER1_CTL_R = 0x0;                 // Can assume defaults to all 0's
+
+TIMER1_TAPR_R = 0x0;                // Timer 1A: Prescaler not used
+TIMER1_TBPR_R = 0x0;                // Timer 1A: Prescaler not used
+
+// 16,000,000 cycles/s / 1000 ms/s = 16000
+TIMER1_TAILR_R = 16000;
+TIMER1_TBILR_R = 16000;
+// 16,000,000 cycles/s / 1000 ms/s * 50% = 8000
+TIMER1_TAMATCHR_R = 8000;
+TIMER1_TBMATCHR_R = 8000;
+
+// Re-enable Timer 1A and 1B
+TIMER1_CTL_R |= 0x101;
+    </pl-code>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

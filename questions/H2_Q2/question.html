@@ -1,0 +1,62 @@
+<p><b>Please put an integer unless you think the answer is not viable, then put n/a</b></p>
+<br>
+<pl-question-panel>
+  <pl-code language="c" prevent-select="true">
+    char msg[] = "{{params.j}}";
+    int my_length = 0xFFFFFFFF;
+    my_length = strlen(msg);
+  </pl-code>
+</pl-question-panel>
+<pl-string-input answers-name="k" label="my_length =" allow-blank=true></pl-string-input>
+
+<br>
+<br>
+<br>
+
+<pl-question0panel>
+  <pl-code language="c" prevent-select="true">
+    char msg[{{params.g}}] = "{{params.j}}";
+    int my_length = 0xFFFFFFFF;
+    my_length = strlen(msg);
+  </pl-code>
+</pl-question0panel>
+<pl-string-input answers-name="d" label="my_length =" allow-blank=true></pl-string-input>
+
+<br>
+<br>
+<br>
+
+<pl-question0panel>
+  <pl-code language="c" prevent-select="true">
+    char msg[100] = &#123;{{params.b}}&#125;;
+    int my_length = 0xFFFFFFFF;
+    my_length = strlen(msg);
+  </pl-code>
+</pl-question0panel>
+<pl-string-input answers-name="e" label="my_length =" allow-blank=true></pl-string-input>
+
+<br>
+<br>
+<br>
+
+<pl-question0panel>
+  <pl-code language="c" prevent-select="true">
+    char msg[] = &#123;{{params.n}}&#125;;
+    int my_length = 0xFFFFFFFF;
+    my_length = strlen(msg + {{params.c}});
+  </pl-code>
+</pl-question0panel>
+<pl-string-input answers-name="f" label="my_length =" allow-blank=true></pl-string-input>
+
+<br>
+<br>
+<br>
+
+<pl-question0panel>
+  <pl-code language="c" prevent-select="true">
+    char msg[] = "{{params.a}}";
+    int my_length = 0xFFFFFFFF;
+    my_length = strlen(msg + strlen(msg));
+  </pl-code>
+</pl-question0panel>
+<pl-string-input answers-name="g" label="my_length =" allow-blank=true></pl-string-input>

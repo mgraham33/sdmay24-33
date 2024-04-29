@@ -1,0 +1,18 @@
+{
+    "uuid": "3c7761ee-f0e1-423c-8439-a61c5a71a98d",
+    "title": "Arithmetic",
+    "topic": "Assembly",
+    "tags": [
+        "wmhudson",
+        "fa23"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/armgrader:v1.2",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

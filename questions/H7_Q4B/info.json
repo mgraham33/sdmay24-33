@@ -1,0 +1,18 @@
+{
+    "uuid": "7c79c654-3044-4cd8-9665-8c5708912b7e",
+    "title": "UART with Interrupt Hardware",
+    "topic": "UART",
+    "tags": [
+        "sdmay24-33",
+        "wmhudson"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

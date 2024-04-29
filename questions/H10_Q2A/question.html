@@ -1,0 +1,63 @@
+<pl-question-panel>
+    <h1>PWM Initialization</h1>
+    <p>
+        Initialize Timer 1 module B in PWM mode and use it to generate a square wave
+        with a <b>{{params.period}} ms</b> period and <b>{{params.duty}}%</b> duty cycle.
+    </p>
+    <p>
+        Assume the associated GPIO module has already been configured. Also assume that
+        the prescaler registers start at random values.
+    </p>
+    <br>
+    <pl-file-editor
+        file-name="student.c"
+        ace-mode="ace/mode/c_cpp"
+    >
+#include "/grade/tests/student.h" // Required to compile. Links your code to the grader.
+
+/**
+ * Fill in your initialization code here
+ */
+void init_TIMER1() {
+    // TODO
+}
+
+    </pl-file-editor>
+</pl-question-panel>
+
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+// Enable Timer 1's clock
+SYSCTL_RCGCTIMER_R |= 0x2;
+
+// Disable Timer 1B while we set it up
+TIMER1_CTL_R &= ~0x100;
+wait_timer_disable();           // Required for auto-grader
+
+// Set desired Timer 1 functionality
+TIMER1_CFG_R = 0x4;             // Set to 16-bit mode
+TIMER1_TBMR_R = 0xa;            // Timer 1B: PWM, Periodic mode
+
+TIMER1_CTL_R = 0x0;             // Can assume defaults to all 0's
+
+// Configure a period of {{params.period}} ms
+// Timer 1B: prescaler set to upper 8 bits ({{params.period}} ms * 16000 cycles/ms >> 16)
+TIMER1_TBPR_R = {{params.tbpr}};
+// Timer 1B: set to lower 16 bits of period ({{params.period}} ms * 16000 cycles/ms & 0xffff)
+TIMER1_TBILR_R = {{params.tbilr}};
+
+// Configure for {{params.duty}}% duty cycle for a {{params.period}} ms
+// ({{params.period}} ms * 16000 cycles/ms * {{params.duty}}% >> 16)
+TIMER1_TBPMR_R = {{params.tbpmr}};
+// ({{params.period}} ms * 16000 cycles/ms * {{params.duty}}% & 0xffff)
+TIMER1_TBMATCHR_R = {{params.tbmatchr}};
+
+// Re-enable Timer 1B
+TIMER1_CTL_R |= 0x100;
+    </pl-code>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

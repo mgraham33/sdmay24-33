@@ -1,0 +1,10 @@
+<pl-question-panel>
+    <h1>NVIC Enable Register</h1>
+</pl-question-panel>
+<p>
+    Which NVIC_ENx_R (NVIC Enable) register would you use (i.e. replace x with the apporpriate number),
+    and what value would you assign to this register to enable the NVIC to send <b>{{params.interrupt}}</b> interrupts to the CPU?
+</p>
+
+<p><pl-integer-input display="block" answers-name="ans_x" label="x = "></pl-integer-input></p>
+<p><pl-integer-input display="block" base="0" placeholder="prefixed integer" answers-name="ans_mask" label="NVIC_ENx_R |= " suffix=";"></pl-string-input></p>

@@ -1,0 +1,107 @@
+<pl-question-panel>
+    <h1>ADC Subsystem</h1>
+    <p>
+        The figure below shows the voltage being applied to a number of the ADC analog inputs (AIN).
+        Answer the following questions based on this figure and based on the following assumptions:
+        <ul>
+            <li>The ADC is a <b>10-bit</b> ADC.</li>
+            <li>The ADC input range is from 0V (V<sub>min</sub>) to 256V (V<sub>max</sub>).</li>
+            <li>The ADC has M = 2<sup>n</sup> steps, where n is the number of ADC output bits.</li>
+        </ul>
+    </p>
+
+    <p style="color:red"><b>Note: these assumptions are most likely different from the previous question</b></p>
+
+    <pl-drawing width="775" height ="500">
+        <pl-drawing-initial>
+            <pl-drawing-group visible="true">
+                <pl-rectangle x1="387.5" y1="250" width="775" height="500" color="#FDFEFE"></pl-rectangle>
+                <pl-rectangle x1="387.5" y1="250" width="500" height="450" color="#FDFEFE"></pl-rectangle>
+                <pl-text x1="325" y1="25" label="Microcontroller" font-size="24" latex="false"></pl-text>
+                <pl-rectangle x1="500" y1="250" width="200" height="365" color="#FDFEFE"></pl-rectangle>
+                <pl-text x1="450" y1="250" label="ADC" font-size="24" latex="false"></pl-text>
+
+                <!-- This part reads params.drawing as a loop, and the inner part says to print each element (the .) of params.drawing as html code (the triple curly brackets) -->
+                {{#params.drawing}}
+                    {{{.}}}
+                {{/params.drawing}}
+            </pl-drawing-group>
+        </pl-drawing-initial>
+    </pl-drawing>
+    <br>
+    <p>
+        Complete the following code by replacing the "TODO" sections with actual values. Assume:
+        <ul>
+            <li>GPIO registers have already been configured correctly</li>
+            <li>ADC initialization registers have already been configured correctly</li>
+            <li>That ADC conversion will be initiated (i.e. triggered/started) by the software</li>
+            <li>Polling will be used to determine when the ADC has completed all of its conversions</li>
+        </ul>
+    </p>
+    <br>
+    <pl-code language="c">
+void main()
+{
+    int i;
+    char results[100];                // Array to place ADC results
+
+    // Sample Sequencer Input Multiplexer Select (SSMUX0)
+    ADC0_SSMUX0_R = {{params.ssmux}}
+
+    // Sample Sequencer Control (SSCTL0)
+    ADC0_SSCTL0_R = {{params.ssctl}}
+
+    // Start ADC conversion
+    ADC0_PSSI_R = "TODO";             // SS0
+
+    // Wait for the ADC to complete all of its conversions
+    while ((~ADC0_RIS_R & "TODO")) {} // SS0
+    ADC0_ISC_R = "TODO";              // SS0
+
+    // Place the converted values into the results array
+    for (i = 0; i < "TODO"; i++) 
+    {
+        results[i] = "TODO";          // Read converted values of SS0
+    }
+
+    // Print the results
+    for (i = 0; i < "TODO"; i++)
+    {
+        printf("%d ", results[i]);
+    }
+}
+    </pl-code>
+    <br>
+</pl-question-panel>
+
+<h3>Handling interrupts</h3>
+<p><pl-integer-input answers-name="pssi" base=0 display="block" label="ADC0_PSSI_R = " placeholder="(interrupt config mask)" suffix=";"></pl-integer-input></p>
+<p><pl-integer-input answers-name="ris" base=0 display="block" label="while ((~ADC0_RIS_R & " placeholder="(interrupt status mask)" suffix="))"></pl-integer-input></p>
+<p><pl-integer-input answers-name="isc" base=0 display="block" label="ADC0_ISC_R = " placeholder="(reset mask)" suffix=";"></pl-integer-input></p>
+
+<pl-answer-panel>
+    <h3>Loops</h3>
+    <p>
+        Sequences are completed from input 0 to input 7 of the ADCSSMUX register until the stop bit is reached in the ADCSSCTL register. In this case, that is the {{correct_answers.seq_len0}}
+        right most analog inputs in the ADCSSMUX register.
+    </p>
+</pl-answer-panel>
+<pl-submission-panel><br></pl-submission-panel>
+
+<h3>Results Loop</h3>
+<p><pl-integer-input answers-name="seq_len0" base=0 display="block" label="for (i = 0; i < " placeholder="(number of samples processed)" suffix="; i++)"></pl-integer-input></p>
+<p><pl-string-input answers-name="fifo" display="block" label="results[i] = " placeholder="(register macro)" suffix=";" remove-leading-trailing="true"></pl-string-input></p>
+<pl-submission-panel><br></pl-submission-panel>
+
+<h3>Print Loop</h3>
+<p><pl-integer-input answers-name="seq_len1" base=0 display="block" label="for (i = 0; i < " placeholder="(number of samples processed)" suffix="; i++)"></pl-integer-input></p>
+<pl-question-panel><p>Finally, what is the output of the code you wrote?</p></pl-question-panel>
+<pl-answer-panel>
+    <p>
+        Since the resolution for the ADC is 0.25 volts per bit, 0.25 is the slope. 
+        This means that to get the output value (x), you must divide the Input Voltage (y) by the slope (m) to get Input Voltage * 4.
+        The inputs that are computed and printed are the ones outlined by the {{correct_answers.seq_len0}} least significant nibbles in the 
+        ADCSSMUX register. Each nibble in the ADCSSMUX register corresponds to a single AIN input, from 0 = AIN0 to B = AIN11.
+    </p>
+</pl-answer-panel>
+<p><pl-string-input answers-name="print_str" display="block" label="Prints: " remove-leading-trailing="true"></pl-string-input></p>

@@ -1,0 +1,33 @@
+[
+    {
+        "name": "STR Rt, [Rn, #imm8]!",
+        "width": 32,
+        "fields": [
+            {"width":5, "specific":"11111", "general":"11111"},
+            {"width":2, "specific":"00", "general":"00"},
+            {"width":1, "specific":"0", "general":"0"},
+            {"width":1, "specific":"0", "general":"0"},
+            {"width":2, "specific":"10", "general":"10"},
+            {"width":1, "specific":"0", "general":"0"},
+            {"width":4, "specific":"", "general":"Rn"},
+            {"width":4, "specific":"", "general":"Rt"},
+            {"width":1, "specific":"1", "general":"1"},
+            {"width":3, "specific":"111", "general":"P U W"},
+            {"width":8, "specific":"", "general":"imm8"}
+        ]
+    },
+    {
+        "name": "MUL Rd, Rn, Rm",
+        "width": 32,
+        "fields": [
+            {"width":5, "specific":"11111", "general":"11111"},
+            {"width":4, "specific":"0110", "general":"0110"},
+            {"width":3, "specific":"000", "general":"000"},
+            {"width":4, "specific":"", "general":"Rn"},
+            {"width":4, "specific":"1111", "general":"1111"},
+            {"width":4, "specific":"", "general":"Rd"},
+            {"width":4, "specific":"0000", "general":"0000"},
+            {"width":4, "specific":"", "general":"Rm"}
+        ]
+    }
+]

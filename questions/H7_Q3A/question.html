@@ -1,0 +1,93 @@
+<pl-question-panel>
+    <h1>UART Software Implementation</h1>
+    <p>
+        Assume there is no UART hardware device. Complete the below functions to implement the UART protocol in software.
+    </p>
+    <p><i>Given: Assume you have available a function called wait_us(float WaitTime) that waits for WaitTime microseconds before continuing.</i></p>
+</pl-question-panel>
+
+<pl-file-editor
+    file-name="student_software.c"
+    ace-mode="ace/mode/c_cpp"
+>
+#include "/grade/tests/student_software.h" // Required to compile. Links your code with the grader
+
+/**
+ * Configure pin {{params.pin}} of Port B as a GPIO output
+ */
+void init_portB() 
+{
+    // TODO
+}
+
+/**
+ * Send my_text out of Port B pin {{params.pin}} encoded in the UART frame and
+ * baud rate of 9600. Since there is no UART device, your code must use the GPIO
+ * Data Register of Port B pin {{params.pin}} to transmit the 8-bits of my_text.
+ */
+void serial_send(char my_text) 
+{
+    // TODO
+}
+
+</pl-file-editor>
+
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+void init_portB() 
+{
+    // Start Port B clock
+    SYSCTL_RCGCGPIO_R = SYSCTL_RCGCGPIO_R | 0x02;
+    // Enable Digital functionality of Port B pin 3
+    GPIO_PORTB_DEN_R = GPIO_PORTB_DEN_R | {{params.mask}};
+    //Set direction of Port B pin3 to output
+    GPIO_PORTB_DIR_R = GPIO_PORTB_DIR_R | {{params.mask}};
+    // Set wire for GPIO (OK if missing this line for this HW)
+    GPIO_PORTB_AFSEL_R = GPIO_PORTB_AFSEL_R & {{params.nmask}};
+}
+
+void serial_send(char my_text)
+{
+    int i = 0;
+    int odd_parity = 1;
+    float BitTime = 104.17;
+    // Send Start bit
+    GPIO_PORTB_DATA_R = GPIO_PORTB_DATA_R & {{params.nmask}};
+    wait_us(BitTime);
+    // Send Data bits
+    for(i=0; i < 8; i++) 
+    {
+        if( ((my_text>>i) & 0x01) ) 
+        {
+            GPIO_PORTB_DATA_R = GPIO_PORTB_DATA_R | {{params.mask}}; //Send 1
+        } 
+        else 
+        {
+            GPIO_PORTB_DATA_R = GPIO_PORTB_DATA_R & {{params.nmask}}; //Send 0
+        }
+        wait_us(BitTime);
+    }
+
+    // Compute and send Odd Parity bit
+    for(i=0; i < 8; i++) {
+        odd_parity = odd_parity ^ ((my_text>>i) & 0x01);
+    }
+
+    if(odd_parity) {
+        GPIO_PORTB_DATA_R = GPIO_PORTB_DATA_R | {{params.mask}};
+    } else {
+        GPIO_PORTB_DATA_R = GPIO_PORTB_DATA_R & {{params.nmask}};
+    }
+    
+    wait_us(BitTime);
+    // Send 2 stop bits
+    GPIO_PORTB_DATA_R = GPIO_PORTB_DATA_R | {{params.mask}};
+    wait_us(2*BitTime);
+}
+    </pl-code>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

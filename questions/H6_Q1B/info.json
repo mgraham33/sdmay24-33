@@ -1,0 +1,12 @@
+{
+    "uuid": "0f3a912a-f31f-4630-bccb-47ddfb8852a6",
+    "title": "NVIC Enable Register",
+    "topic": "Interrupts",
+    "tags": [
+        "sdmay24-33",
+        "wmhudson"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "Internal"
+}

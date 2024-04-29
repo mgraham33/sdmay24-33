@@ -1,0 +1,59 @@
+<pl-question-panel>
+    <h1>ADC Subsystem</h1>
+    <p>
+        The figure below shows the voltage being applied to a number of the ADC analog inputs (AIN).
+        Answer the following questions based on this figure and based on the following assumptions:
+        <ul>
+            <li>The ADC is a <b>10-bit</b> ADC.</li>
+            <li>The ADC input range is from 0V (V<sub>min</sub>) to 256V (V<sub>max</sub>).</li>
+            <li>The ADC has M = 2<sup>n</sup> steps, where n is the number of ADC output bits.</li>
+        </ul>
+    </p>
+
+    <pl-drawing width="775" height ="500">
+        <pl-drawing-initial>
+            <pl-drawing-group visible="true">
+                <pl-rectangle x1="387.5" y1="250" width="775" height="500" color="#FDFEFE"></pl-rectangle>
+                <pl-rectangle x1="387.5" y1="250" width="500" height="450" color="#FDFEFE"></pl-rectangle>
+                <pl-text x1="325" y1="25" label="Microcontroller" font-size="24" latex="false"></pl-text>
+                <pl-rectangle x1="500" y1="250" width="200" height="365" color="#FDFEFE"></pl-rectangle>
+                <pl-text x1="450" y1="250" label="ADC" font-size="24" latex="false"></pl-text>
+                
+                <!-- This part reads params.drawing as a loop, and the inner part says to print each element (the .) of params.drawing as html code (the triple curly brackets) -->
+                {{#params.drawing}}
+                    {{{.}}}
+                {{/params.drawing}}
+            </pl-drawing-group>
+        </pl-drawing-initial>
+    </pl-drawing>
+    <br>
+    <p>
+        Assume the voltage of ADC input {{params.ain}} (i.e. AIN{{params.ain}}) of the Figure is provided by a sensor that
+        measures temperature.
+    </p>
+    <p>
+        Furthermore, assume:
+        <ul>
+            <li>The voltage produced by the sensor is linear to the temperature measured</li>
+            <li>The specified temperature measurement range is 0 °C to 100 °C</li>
+            <li>The corresponding output voltage range is 0V to 200V.</li>
+        </ul>
+    </p>
+</pl-question-panel>
+
+<p>
+    For the AIN{{params.ain}} voltage given in the figure (<b>{{params.voltage}}V</b>), what temperature is the sensor detecting?
+</p>
+
+<pl-answer-panel>
+    <pl-figure file-name="answerDiagram.png" alt="Answer Diagram"></pl-figure>
+    <p>
+        m = y<sub>0</sub> / x<sub>0</sub> = 100 °C / 200 °C = 0.5<br>
+        x = {{params.voltage}}V<br>
+        b = 0<br><br>
+
+        y = mx + b = 0.5 * {{params.voltage}}V + 0 = <b>{{correct_answers.degrees}} °C</b>
+    </p>
+</pl-answer-panel>
+
+<p><pl-number-input answers-name="degrees" display="block" suffix="°C" label="Detected Temperature = "></pl-number-input></p>

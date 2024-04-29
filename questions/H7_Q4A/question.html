@@ -1,0 +1,59 @@
+<pl-question-panel>
+    <p>
+        The figure below shows a simplified hardware architecture for the UART interrupts sub-system.
+        It is composed of software programmable registers (IM, RIS, MIS, ICR), along with logic gates. In
+        this question, you will design a circuit to complete the UART interrupt subsystem hardware.
+        You will then complete software to make use of this simplified UART interrupt subsystem.
+    </p>
+</pl-question-panel>
+<pl-question-panel>
+    <h1>Design a CPRE 281 Style Falling Edge Detector</h1>
+    <br>
+    <p>
+        Design a circuit like from CPRE 281 to place in the "Falling Edge Detector" box of the UART Interrupt subsystem below.
+        This will be used to detect when a new UART frame begins to arrive. Recall the start symbol of a UART frame is indicated by the UART RX
+        wire transitioning from high to low (i.e. a falling or negative edge occurs). To keep your circuit simple, use the following assumptions:
+    </p>
+    <ul>
+        <li>
+            Your circuit should pulse the “detect” signal for 1 clock cycle whenever a falling edge on the
+            RX wire occurs. In other words, “detect” should become '1' for exactly one clock cycle.
+        </li>
+        <li>You are limited to using the following types of components: 
+            <ul>
+                <li>AND</li>
+                <li>OR</li>
+                <li>NOT</li>
+                <li>XOR</li>
+                <li>D Flip-Flop</li>
+            </ul>
+        </li>
+        <li>Assume any time the RX wire goes low, it will stay low for at least one clock cycle.</li>
+        <li>Inputs:<ul>
+            <li>UART RX wire</li>
+            <li>Clock signal</li>
+        </ul></li>
+        <li>Outputs:<ul>
+            <li>Detect signal</li>
+        </ul></li>
+    </ul>
+
+    <pl-figure file-name="falling_edge_detector_template.png"></pl-figure>
+    <br>
+    <p>
+        <i>
+            Feel free to download the above template 
+            <pl-file-download
+                file-name="falling_edge_detector_template.png"
+                label="here"
+            ></pl-file-download>
+        </i>
+    </p>
+</pl-question-panel>
+
+<pl-file-upload file-names="falling_edge_detector.png"></pl-file-upload>
+
+<pl-submission-panel>
+    <!-- <pl-external-grader-results></pl-external-grader-results> -->
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

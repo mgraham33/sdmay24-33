@@ -1,0 +1,46 @@
+<pl-question-panel>
+    <h1>Pointers</h1>
+    <p>
+        What is the value of a, b, c_ptr at the end of each program. Give N/A if a value is undefined. It is
+recommended that you practices drawing a memory map for solving these questions.<br>
+    </p>
+    <p>Assume the following memory locations for the variables:</p>
+    <ul>
+        <li>Location of a is 0xFFFF_FF00</li>
+        <li>Location of b is 0xFFFF_FE00</li>
+        <li>Location of c_ptr is 0xFFFF_FD00</li>
+    </ul>
+</pl-question-panel>
+
+<p>
+    <pl-code
+        language="c"
+        prevent-select="true"
+    >{{params.code1}}</pl-code>
+
+    <pl-integer-input answers-name="1a" label="$a=$"></pl-integer-input>
+    <pl-integer-input answers-name="1b" label="$b=$"></pl-integer-input>
+    <pl-string-input answers-name="1c" label="$c\_ptr=$" placeholder="hexadecimal" ignore-case="true"></pl-string-input>
+</p>
+<br>
+<p>
+    <pl-code
+        language="c"
+        prevent-select="true"
+    >{{params.code2}}</pl-code>
+
+    <pl-integer-input answers-name="2a" label="$a=$"></pl-integer-input>
+    <pl-integer-input answers-name="2b" label="$b=$"></pl-integer-input>
+    <pl-string-input answers-name="2c" label="$c\_ptr=$" placeholder="hexadecimal" ignore-case="true"></pl-string-input>
+</p>
+<br>
+<p>
+    <pl-code
+        language="c"
+        prevent-select="true"
+    >{{params.code3}}</pl-code>
+
+    <pl-integer-input answers-name="3a" label="$a=$"></pl-integer-input>
+    <pl-integer-input answers-name="3b" label="$b=$"></pl-integer-input>
+    <pl-string-input answers-name="3c" label="$c\_ptr=$" placeholder="hexadecimal" ignore-case="true"></pl-string-input>
+</p>

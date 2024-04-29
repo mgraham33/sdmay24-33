@@ -1,0 +1,880 @@
+{
+    "ADCACTSS": [
+        {
+            "name": "BUSY",
+            "fullname": "ADC Busy",
+            "bit": 16,
+            "options": [
+                "ADC is idle",
+                "ADC is busy"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "ASEN3",
+            "fullname": "ADC SS3 Enable",
+            "bit": 3,
+            "options": [
+                "SS3 is disabled",
+                "SS3 is enabled"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "ASEN2",
+            "fullname": "ADC SS2 Enable",
+            "bit": 2,
+            "options": [
+                "SS2 is disabled",
+                "SS2 is enabled"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "ASEN1",
+            "fullname": "ADC SS1 Enable",
+            "bit": 1,
+            "options": [
+                "SS1 is disabled",
+                "SS1 is enabled"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "ASEN0",
+            "fullname": "ADC SS0 Enable",
+            "bit": 0,
+            "options": [
+                "SS0 is disabled",
+                "SS0 is enabled"
+            ],
+            "width": 1,
+            "default": 0
+        }
+    ],
+    "ADCRIS": [
+        {
+            "name": "INRDC",
+            "fullname": "Digital Comparator Raw Interrupt Status",
+            "bit": 16,
+            "options": [
+                "No comparator interrupts",
+                "Comparator interrupt detected"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "INR3",
+            "fullname": "SS3 Raw Interrupt Status",
+            "bit": 3,
+            "options": [
+                "SS3 has no interrupts",
+                "SS3 has an interrupt"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "INR2",
+            "fullname": "SS2 Raw Interrupt Status",
+            "bit": 2,
+            "options": [
+                "SS2 has no interrupts",
+                "SS2 has an interrupt"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "INR1",
+            "fullname": "SS1 Raw Interrupt Status",
+            "bit": 1,
+            "options": [
+                "SS1 has no interrupts",
+                "SS1 has an interrupt"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "INR0",
+            "fullname": "SS0 Raw Interrupt Status",
+            "bit": 0,
+            "options": [
+                "SS0 has no interrupts",
+                "SS0 has an interrupt"
+            ],
+            "width": 1,
+            "default": 0
+        }
+    ],
+    "ADCIM": [
+        {
+            "name": "DCONSS3",
+            "fullname": "Digital Comparator Interrupt on SS3",
+            "bit": 19,
+            "options": [
+                "Comparator doesn't affect SS3 interrupt status",
+                "Comparator does affect SS3 interrupt status"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "DCONSS2",
+            "fullname": "Digital Comparator Interrupt on SS2",
+            "bit": 18,
+            "options": [
+                "Comparator doesn't affect SS2 interrupt status",
+                "Comparator does affect SS2 interrupt status"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "DCONSS1",
+            "fullname": "Digital Comparator Interrupt on SS1",
+            "bit": 17,
+            "options": [
+                "Comparator doesn't affect SS1 interrupt status",
+                "Comparator does affect SS1 interrupt status"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "DCONSS0",
+            "fullname": "Digital Comparator Interrupt on SS0",
+            "bit": 16,
+            "options": [
+                "Comparator doesn't affect SS0 interrupt status",
+                "Comparator does affect SS0 interrupt status"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "MASK3",
+            "fullname": "SS3 Interrupt Mask",
+            "bit": 3,
+            "options": [
+                "SS3 status does not affect the interrupt status",
+                "SS3 status affects the interrupt status"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "MASK2",
+            "fullname": "SS2 Interrupt Mask",
+            "bit": 2,
+            "options": [
+                "SS2 status does not affect the interrupt status",
+                "SS2 status affects the interrupt status"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "MASK1",
+            "fullname": "SS1 Interrupt Mask",
+            "bit": 1,
+            "options": [
+                "SS1 status does not affect the interrupt status",
+                "SS1 status affects the interrupt status"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "MASK0",
+            "fullname": "SS0 Interrupt Mask",
+            "bit": 0,
+            "options": [
+                "SS0 status does not affect the interrupt status",
+                "SS0 status affects the interrupt status"
+            ],
+            "width": 1,
+            "default": 0
+        }
+    ],
+    "ADCISC": [
+        {
+            "name": "DCINSS3",
+            "fullname": "Digital Comparator Interrupt Status on SS3",
+            "bit": 19,
+            "options": [
+                "No comparator SS3 interrupt has occurred",
+                "A comparator SS3 interrupt has occurred"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "DCINSS2",
+            "fullname": "Digital Comparator Interrupt Status on SS2",
+            "bit": 18,
+            "options": [
+                "No comparator SS2 interrupt has occurred",
+                "A comparator SS2 interrupt has occurred"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "DCINSS1",
+            "fullname": "Digital Comparator Interrupt Status on SS1",
+            "bit": 17,
+            "options": [
+                "No comparator SS1 interrupt has occurred",
+                "A comparator SS1 interrupt has occurred"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "DCINSS0",
+            "fullname": "Digital Comparator Interrupt Status on SS0",
+            "bit": 16,
+            "options": [
+                "No comparator SS0 interrupt has occurred",
+                "A comparator SS0 interrupt has occurred"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "IN3",
+            "fullname": "SS3 Interrupt Status and Clear",
+            "bit": 3,
+            "options": [
+                "No SS3 interrupt has occurred",
+                "An SS3 interrupt has occurred"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "IN2",
+            "fullname": "SS2 Interrupt Status and Clear",
+            "bit": 2,
+            "options": [
+                "No SS2 interrupt has occurred",
+                "An SS2 interrupt has occurred"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "IN1",
+            "fullname": "SS1 Interrupt Status and Clear",
+            "bit": 1,
+            "options": [
+                "No SS1 interrupt has occurred",
+                "An SS1 interrupt has occurred"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "IN0",
+            "fullname": "SS0 Interrupt Status and Clear",
+            "bit": 0,
+            "options": [
+                "No SS0 interrupt has occurred",
+                "An SS0 interrupt has occurred"
+            ],
+            "width": 1,
+            "default": 0
+        }
+    ],
+    "ADCPSSI": [
+        {
+            "name": "GSYNC",
+            "fullname": "Global Synchronize",
+            "bit": 31,
+            "options": [
+                "Sampling initiated or waiting to synchronize",
+                "Initiates waiting sampling"
+            ]
+        },
+        {
+            "name": "SYNCWAIT",
+            "fullname": "Synchronize Wait",
+            "bit": 27,
+            "options": [
+                "Sampling begins when SS has been initiated",
+                "Sampling waits until GSYNC is set"
+            ]
+        },
+        {
+            "name": "SS3",
+            "fullname": "SS3 Initiate",
+            "bit": 3,
+            "options": [
+                "SS3 has not been initiated",
+                "Initiate SS3 sampling"
+            ]
+        },
+        {
+            "name": "SS2",
+            "fullname": "SS2 Initiate",
+            "bit": 2,
+            "options": [
+                "SS2 has not been initiated",
+                "Initiate SS2 sampling"
+            ]
+        },
+        {
+            "name": "SS1",
+            "fullname": "SS1 Initiate",
+            "bit": 1,
+            "options": [
+                "SS1 has not been initiated",
+                "Initiate SS1 sampling"
+            ]
+        },
+        {
+            "name": "SS0",
+            "fullname": "SS0 Initiate",
+            "bit": 0,
+            "options": [
+                "SS0 has not been initiated",
+                "Initiate SS0 sampling"
+            ]
+        }
+    ],
+    "ADCSSMUX": [
+        {
+            "name": "MUX7",
+            "fullname": "8th Sample Input Select",
+            "bit": 28,
+            "options": [
+                "AIN0",
+                "AIN1",
+                "AIN2",
+                "AIN3",
+                "AIN4",
+                "AIN5",
+                "AIN6",
+                "AIN7",
+                "AIN8",
+                "AIN9",
+                "AIN10",
+                "AIN11"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "MUX6",
+            "fullname": "7th Sample Input Select",
+            "bit": 24,
+            "options": [
+                "AIN0",
+                "AIN1",
+                "AIN2",
+                "AIN3",
+                "AIN4",
+                "AIN5",
+                "AIN6",
+                "AIN7",
+                "AIN8",
+                "AIN9",
+                "AIN10",
+                "AIN11"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "MUX5",
+            "fullname": "6th Sample Input Select",
+            "bit": 20,
+            "options": [
+                "AIN0",
+                "AIN1",
+                "AIN2",
+                "AIN3",
+                "AIN4",
+                "AIN5",
+                "AIN6",
+                "AIN7",
+                "AIN8",
+                "AIN9",
+                "AIN10",
+                "AIN11"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "MUX4",
+            "fullname": "5th Sample Input Select",
+            "bit": 16,
+            "options": [
+                "AIN0",
+                "AIN1",
+                "AIN2",
+                "AIN3",
+                "AIN4",
+                "AIN5",
+                "AIN6",
+                "AIN7",
+                "AIN8",
+                "AIN9",
+                "AIN10",
+                "AIN11"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "MUX3",
+            "fullname": "4th Sample Input Select",
+            "bit": 12,
+            "options": [
+                "AIN0",
+                "AIN1",
+                "AIN2",
+                "AIN3",
+                "AIN4",
+                "AIN5",
+                "AIN6",
+                "AIN7",
+                "AIN8",
+                "AIN9",
+                "AIN10",
+                "AIN11"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "MUX2",
+            "fullname": "3rd Sample Input Select",
+            "bit": 8,
+            "options": [
+                "AIN0",
+                "AIN1",
+                "AIN2",
+                "AIN3",
+                "AIN4",
+                "AIN5",
+                "AIN6",
+                "AIN7",
+                "AIN8",
+                "AIN9",
+                "AIN10",
+                "AIN11"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "MUX1",
+            "fullname": "2nd Sample Input Select",
+            "bit": 4,
+            "options": [
+                "AIN0",
+                "AIN1",
+                "AIN2",
+                "AIN3",
+                "AIN4",
+                "AIN5",
+                "AIN6",
+                "AIN7",
+                "AIN8",
+                "AIN9",
+                "AIN10",
+                "AIN11"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "MUX0",
+            "fullname": "1st Sample Input Select",
+            "bit": 0,
+            "options": [
+                "AIN0",
+                "AIN1",
+                "AIN2",
+                "AIN3",
+                "AIN4",
+                "AIN5",
+                "AIN6",
+                "AIN7",
+                "AIN8",
+                "AIN9",
+                "AIN10",
+                "AIN11"
+            ],
+            "width": 4,
+            "default": 0
+        }
+    ],
+    "ADCSSCTL": [
+        {
+            "name": "S7",
+            "fullname": "8th Sample Configuration",
+            "bit": 28,
+            "options": [
+                "Reads from SSMUX, No interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, Differential sampling"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "S6",
+            "fullname": "7th Sample Configuration",
+            "bit": 24,
+            "options": [
+                "Reads from SSMUX, No interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, Differential sampling"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "S5",
+            "fullname": "6th Sample Configuration",
+            "bit": 20,
+            "options": [
+                "Reads from SSMUX, No interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, Differential sampling"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "S4",
+            "fullname": "5th Sample Configuration",
+            "bit": 16,
+            "options": [
+                "Reads from SSMUX, No interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, Differential sampling"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "S3",
+            "fullname": "4th Sample Configuration",
+            "bit": 12,
+            "options": [
+                "Reads from SSMUX, No interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, Differential sampling"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "S2",
+            "fullname": "3rd Sample Configuration",
+            "bit": 8,
+            "options": [
+                "Reads from SSMUX, No interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, Differential sampling"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "S1",
+            "fullname": "2nd Sample Configuration",
+            "bit": 4,
+            "options": [
+                "Reads from SSMUX, No interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, Differential sampling"
+            ],
+            "width": 4,
+            "default": 0
+        },
+        {
+            "name": "S0",
+            "fullname": "1st Sample Configuration",
+            "bit": 0,
+            "options": [
+                "Reads from SSMUX, No interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, No interrupt, Final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Not final sample, Differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, No differential sampling",
+                "Reads from SSMUX, Interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, No interrupt, Final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Not final sample, Differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, No differential sampling",
+                "Reads from temperature sensor, Interrupt, Final sample, Differential sampling"
+            ],
+            "width": 4,
+            "default": 0
+        }
+    ],
+    "ADCSSFIFO": [
+        {
+            "name": "DATA",
+            "fullname": "Conversion Result Data",
+            "bit": 0,
+            "width": 12,
+            "max": 4095,
+            "min": 0,
+            "default": 0
+        }
+    ],
+    "ADCSSFSTAT": [
+        {
+            "name": "FULL",
+            "fullname": "FIFO Full",
+            "bit": 12,
+            "options": [
+                "FIFO not full",
+                "FIFO is full"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "EMPTY",
+            "fullname": "FIFO Empty",
+            "bit": 8,
+            "options": [
+                "FIFO not empty",
+                "FIFO is empty"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "HPTR",
+            "fullname": "FIFO Head Pointer",
+            "bit": 4,
+            "width": 4,
+            "max": 7,
+            "min": 0,
+            "default": 0
+        },
+        {
+            "name": "TPTR",
+            "fullname": "FIFO Tail Pointer",
+            "bit": 4,
+            "width": 4,
+            "max": 7,
+            "min": 0,
+            "default": 0
+        }
+    ],
+    "ADCSSOP": [
+        {
+            "name": "S7DCOP",
+            "fullname": "Sample 8 Digital Comparator Operation",
+            "bit": 28,
+            "options": [
+                "8th sample is saved in FIFO",
+                "8th sample is sent to the digital comparator"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "S6DCOP",
+            "fullname": "Sample 7 Digital Comparator Operation",
+            "bit": 24,
+            "options": [
+                "7th sample is saved in FIFO",
+                "7th sample is sent to the digital comparator"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "S5DCOP",
+            "fullname": "Sample 6 Digital Comparator Operation",
+            "bit": 20,
+            "options": [
+                "6th sample is saved in FIFO",
+                "6th sample is sent to the digital comparator"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "S4DCOP",
+            "fullname": "Sample 5 Digital Comparator Operation",
+            "bit": 16,
+            "options": [
+                "5th sample is saved in FIFO",
+                "5th sample is sent to the digital comparator"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "S3DCOP",
+            "fullname": "Sample 4 Digital Comparator Operation",
+            "bit": 12,
+            "options": [
+                "4th sample is saved in FIFO",
+                "4th sample is sent to the digital comparator"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "S2DCOP",
+            "fullname": "Sample 3 Digital Comparator Operation",
+            "bit": 8,
+            "options": [
+                "3rd sample is saved in FIFO",
+                "3rd sample is sent to the digital comparator"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "S1DCOP",
+            "fullname": "Sample 2 Digital Comparator Operation",
+            "bit": 4,
+            "options": [
+                "2nd sample is saved in FIFO",
+                "2nd sample is sent to the digital comparator"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "S0DCOP",
+            "fullname": "Sample 1 Digital Comparator Operation",
+            "bit": 0,
+            "options": [
+                "1st sample is saved in FIFO",
+                "1stt sample is sent to the digital comparator"
+            ],
+            "width": 1,
+            "default": 0
+        }
+    ],
+    "ADCCC": [
+        {
+            "name": "CS",
+            "fullname": "ADC Clock Source",
+            "bit": 0,
+            "options": [
+                "System clock",
+                "PIOSC"
+            ],
+            "width": 4,
+            "default": 0
+        }
+    ]
+}

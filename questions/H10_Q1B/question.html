@@ -1,0 +1,114 @@
+<pl-question-panel>
+    <h1>Don't Go into the Light! - ADC Initialization</h1>
+    <p>
+        Complete the program below to have a robot move away from a light source.
+        The robot has two wheels, similar to the robot used in lab, and has a light sensor on each side. See figure.
+    </p>
+    <p>
+        <b>Motor Control:</b> Assume that you are programming Timer 1 module A (for the left motor) and
+        Timer 1 module B (for the right motor) to generate PWM waveforms to control the speed of each wheel's
+        motor (<b>note, connect Timer 1 to Port B</b>). The speed of the motor is proportional to the percentage
+        of time the PWM signal is high (i.e. PWM duty cycle).
+    </p>
+    <p>Note: Your PWM wave must have a period of <b>1 ms</b>. Note the system clock is 16 MHz.</p>
+    <p>
+        <b>Light Sensors:</b> The light sensors are connected to <b>Channel 1</b> (left sensor) and <b>Channel 9</b> (right sensor)
+        of the ADC as single channel inputs (i.e. not differential). You should use <b>Sample Sequencer 0</b>.
+    </p>
+    <p>
+        <b>Robot Behavior:</b> The Robot should move away from the light in the following way. Where 
+        "Speed of motor" is the fraction of the motor's maximum speed:
+        <ul>
+            <li>Speed of left motor = Intensity of left sensor / (Intensity of left sensor + Intensity of right sensor)</li>
+            <li>Speed of right motor = Intensity of right sensor / (Intensity of left sensor + Intensity of right sensor)</li>
+        </ul>
+    </p>
+    <p>
+        randomize:
+        <ul>
+            <li>adc channels?</li>
+            <li>ports?</li>
+        </ul>
+    </p>
+    <pl-figure file-name="robot_diagram.png"></pl-figure>
+    <br>
+    <p>Below is the main code to show you how the functions are used.</p>
+    <pl-code language="c">
+int main() {
+    int left_sensor;
+    int right_sensor;
+    int left_motor; 
+    int right_motor;
+
+    init_TIMER1_A_B();
+    init_ADC();
+
+    while (1) {
+        get_sensor_reading(&left_sensor, &right_sensor);
+
+        compute_motor_values(left_sensor, right_sensor, &left_motor, &right_motor);
+
+        set_motor_speed(left_motor, right_motor);
+    }
+}
+    </pl-code>
+        
+</pl-question-panel>
+
+<pl-file-editor
+    file-name="initialize.c"
+    ace-mode="ace/mode/c_cpp"
+>
+#include "/grade/tests/student.h" // Required to compile. Links your code to the grader.
+
+/**
+ * Initialize the ADC to meet the specification above. INTERRUPTS ARE NOT TO BE USED.
+ *
+ * NOTE: use the method 'wait_adc_disable()' after disabling the ADC during configuration, otherwise you will miss points!
+ */
+void init_ADC() {
+    // TODO
+}
+</pl-file-editor>
+
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+// Setup GPIO
+// Enable clock for GPIO port E
+SYSCTL_RCGCGPIO_R |= 0x10;
+// Enable alternate function
+GPIO_PORTE_AFSEL_R |= 0x14;         // ADC Channel 1 & 9 on pins 2 & 4
+
+// Set digital or analog mode, and pin directions
+GPIO_PORTE_DEN_R &= ~0x14;          // Disable pin 2 & 4 digital mode
+GPIO_PORTE_DIR_R &= ~0x14;          // Pin 2 & 4 set to input
+GPIO_PORTE_AMSEL_R |= 0x14;         // Enable analog mode on pins 2 & 4
+GPIO_PORTE_ADCCTL_R &= ~0x18;       // Optional
+
+// Configure ADC
+SYSCTL_RCGCADC_R |= 0x1;            // Enable ADC clock
+ADC0_ADCCC = 0x0;                   // Use SysClk as ADC clock. Optional
+
+// Disables ADC sample sequencers during setup
+ADC0_ACTSS_R &= ~0x1;               // SS0 disable
+wait_adc_disable();                 // Required for auto-grader
+
+// Set desired ADC SS0 functionality
+ADC0_EMUX_R &= ~0xf;                // Set SS0 to trigger based on ADCPSSI register
+ADC0_SSMUX0_R = 0x0;                // Set all channels to sequence to 0
+ADC0_SSMUX0_R |= 0x91;              // Update to sample channel 1, then 9
+
+// When to stop, and enable setting the Raw Interrupt status flag
+// after channel 1 and 9 have been converted
+ADC0_SSCTL0_R = 0x0;                // First clear register to 0
+ADC0_SSCTL0_R |= 0x60;              // Configure register
+
+// Re-enable ADC SS0
+ADC0_ACTSS_R |= 0x1;
+    </pl-code>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

@@ -1,0 +1,80 @@
+<pl-question-panel>
+    <h1>Struct and Union</h1>
+    <p>
+        For the following structs, calculate the size in bytes.
+    </p>
+    <p><b>Note 1</b>: The size of a union is the size of its largest component</p>
+    <p><b>Note 2</b>: The size of a pointer for our platform is 32 bits</p>
+</pl-question-panel>
+
+<p>
+    <pl-code
+        language="c"
+        prevent-select="true"
+    >{{params.code0}}</pl-code>
+
+    <pl-integer-input 
+        answers-name="q0" 
+        allow-blank=true
+        suffix="Bytes"
+        label="sizeof(small_struct) ="
+    ></pl-integer-input>
+</p>
+<br>
+<p>
+    <pl-code
+        language="c"
+        prevent-select="true"
+    >{{params.code1}}</pl-code>
+
+    <pl-integer-input 
+        answers-name="q1" 
+        allow-blank=true
+        suffix="Bytes"
+        label="sizeof(small_union) ="
+    ></pl-integer-input>
+</p>
+<br>
+<p>
+    <pl-code
+        language="c"
+        prevent-select="true"
+    >{{params.code2}}</pl-code>
+
+    <pl-integer-input 
+        answers-name="q2" 
+        allow-blank=true
+        suffix="Bytes"
+        label="sizeof(medium_struct) ="
+    ></pl-integer-input>
+</p>
+<br>
+<p>
+    <pl-code
+        language="c"
+        prevent-select="true"
+    >{{params.code3}}</pl-code>
+
+    <pl-integer-input 
+        answers-name="q3" 
+        allow-blank=true
+        suffix="Bytes"
+        label="sizeof(large_struct) ="
+    ></pl-integer-input>
+</p>
+
+<pl-answer-panel>
+    <p>
+        Remember, unions only take the size of the largest variable, while structs take the size of all variables.
+        <br><br>
+        Variable type sizes:
+        <ul>
+            <li>short: 2 bytes</li>
+            <li>int: 4 bytes</li>
+            <li>long: 8 bytes</li>
+            <li>char: 1 byte</li>
+            <li>float: 4 bytes</li>
+            <li>double: 8 bytes</li>
+        </ul>
+    </p>
+</pl-answer-panel>

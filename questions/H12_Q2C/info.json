@@ -1,0 +1,18 @@
+{
+    "uuid": "22b6468c-f8ce-4e4a-bf43-cfda6b507871",
+    "title": "Pointer Initialization",
+    "topic": "Assembly",
+    "tags": [
+        "wmhudson",
+        "fa23"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/armgrader:v1.2",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

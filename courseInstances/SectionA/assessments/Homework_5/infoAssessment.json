@@ -1,0 +1,20 @@
+{
+    "uuid": "d25554ae-65d2-4db1-99a9-39e13b45c3b0",
+    "type": "Homework",
+    "title": "Homework 5",
+    "set": "Homework",
+    "number": "1",
+    "allowAccess": [
+         
+    ],
+    "zones": [
+        {
+            "title": "Section 1",
+            "questions": [
+                {"id": "H5_Q1", "points": 2,"maxPoints": 10},
+                {"id": "H5_Q2", "points": 2,"maxPoints": 10},
+                {"id": "H5_Q3", "points": 2,"maxPoints": 10}
+            ]
+        }
+    ]
+}

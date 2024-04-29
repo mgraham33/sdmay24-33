@@ -1,0 +1,123 @@
+<pl-question-panel>
+    <h1>Don't Go into the Light! - Using the Motors</h1>
+    <p>
+        Complete the program below to have a robot move away from a light source.
+        The robot has two wheels, similar to the robot used in lab, and has a light sensor on each side. See figure.
+    </p>
+    <p>
+        <b>Motor Control:</b> Assume that you are programming Timer 1 module A (for the left motor) and
+        Timer 1 module B (for the right motor) to generate PWM waveforms to control the speed of each wheel's
+        motor (<b>note, connect Timer 1 to Port B</b>). The speed of the motor is proportional to the percentage
+        of time the PWM signal is high (i.e. PWM duty cycle).
+    </p>
+    <p>Note: Your PWM wave must have a period of <b>1 ms</b>. Note the system clock is 16 MHz.</p>
+    <p>
+        <b>Light Sensors:</b> The light sensors are connected to <b>Channel 1</b> (left sensor) and <b>Channel 9</b> (right sensor)
+        of the ADC as single channel inputs (i.e. not differential). You should use <b>Sample Sequencer 0</b>.
+    </p>
+    <p>
+        <b>Robot Behavior:</b> The Robot should move away from the light in the following way. Where 
+        "Speed of motor" is the fraction of the motor's maximum speed:
+        <ul>
+            <li>Speed of left motor = Intensity of left sensor / (Intensity of left sensor + Intensity of right sensor)</li>
+            <li>Speed of right motor = Intensity of right sensor / (Intensity of left sensor + Intensity of right sensor)</li>
+        </ul>
+    </p>
+    <pl-figure file-name="robot_diagram.png"></pl-figure>
+    <br>
+    <p>Below is the main code to show you how the functions are used.</p>
+    <pl-code language="c">
+int main() {
+    int left_sensor;
+    int right_sensor;
+    int left_motor; 
+    int right_motor;
+
+    init_TIMER1_A_B();
+    init_ADC();
+
+    while (1) {
+        get_sensor_reading(&left_sensor, &right_sensor);
+
+        compute_motor_values(left_sensor, right_sensor, &left_motor, &right_motor);
+
+        set_motor_speed(left_motor, right_motor);
+    }
+}
+    </pl-code>
+        
+</pl-question-panel>
+
+<pl-file-editor
+    file-name="motors.c"
+    ace-mode="ace/mode/c_cpp"
+>
+#include "/grade/tests/student.h" // Required to compile. Links your code to the grader.
+
+/**
+ * Complete the following API function to read in the light sensor values. Use polling (i.e. no Interrupt Service Routines).
+ *
+ * NOTE: use 'wait_adc()' during any busy-waiting to prevent infinite loops.
+ */
+void get_sensor_reading(int *left_sensor, int *right_sensor) {
+    // TODO
+}
+
+/**
+ * Complete the following API function to set the speed of each motor. The inputs should be specified on a 100-point scale (i.e. 50 means 50% speed).
+ * Assume the input parameters are no less than 1 and no greater than 99. 
+ * Also, rounding errors are acceptable (i.e. DO NOT USE FLOATING POINT CALCULATIONS).
+ */
+void set_motor_speed(int left_motor, int right_motor) {
+    // TODO
+}
+
+/**
+ * Finally, complete the following API function to calculate a left and right motor power value using the incoming left and right sensor values.
+ */
+int compute_motor_values(int left_sensor, int right_sensor, int *left_motor, int *right_motor) {
+    *left_motor = TODO;
+    *right_motor = TODO;
+}
+</pl-file-editor>
+
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+void get_sensor_reading(int *left_sensor, int *right_sensor) {
+    // Initiate a SS0 conversion sequence
+    ADC0_PSSI_R = 0x1;
+
+    // Wait for SS0 ADC conversions to finish
+    while (~ADC0_RIS_R & 0x1) {
+        wait_adc();
+    }
+
+    // Clear raw interrupt status flag
+    ADC0_ISC_R = 0x1;
+
+    // Get converted results from SS0 FIFO
+    *left_sensor = ADC0_SSFIFO0_R;
+    *right_sensor = ADC0_SSFIFO0_R;
+}
+
+void set_motor_speed(int left_motor, int right_motor) {
+    // 16000 = 1ms clock period on 16 MHz clock
+    // TAMATCHR = period - (left_motor% of period) / 100
+    TIMER1_TAMATCHR_R = 16000 - (16000 * left_motor) / 100;
+    // TBMATCHR = period - (right_motor% of period) / 100
+    TIMER1_TBMATCHR_R = 16000 - (16000 * right_motor) / 100;
+}
+
+int compute_motor_values(int left_sensor, int right_sensor, int *left_motor, int *right_motor) {
+    // Left = left_sensor% / combined_sensor
+    *left_motor = (100 * left_sensor) / (left_sensor + right_sensor);
+    // Right = right_sensor% / combined_sensor
+    *right_motor = (100 * right_sensor) / (left_sensor + right_sensor);
+}
+    </pl-code>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

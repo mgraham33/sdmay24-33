@@ -1,0 +1,19 @@
+{
+    "uuid": "b068ebed-e2f7-40cb-8a49-4f6e1de28abc",
+    "title": "A Small C Program",
+    "topic": "C Programming",
+    "tags": [
+        "ccosta22",
+        "fa23",
+        "Murawski"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/test.py"
+    }
+}

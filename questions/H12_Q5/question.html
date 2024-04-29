@@ -1,0 +1,43 @@
+<pl-question-panel>
+  <h1>Complex Comparisons</h1>
+  <p>
+    Given the following declarations, write the assembly code to implement each functionality.
+  </p>
+  <pl-code
+    language="c"
+    prevent-select="true"
+  >
+// Variable declaration assumptions
+unsigned int a;           // Defined at {{params.a_adr}}
+unsigned int b;           // Defined at {{params.b_adr}}
+unsigned int c;           // Defined at {{params.c_adr}}
+unsigned int d;           // Defined at {{params.d_adr}}
+unsigned int flag;        // Defined at {{params.flag_adr}}
+
+// Implement this:
+if ((a {{params.comparison_ab}} b) {{params.logic}} (c {{params.comparison_cd}} d))
+{
+    flag = 1;
+}
+else
+{
+    flag = 0;
+}
+  </pl-code>
+
+  <pl-file-editor
+    file-name="student.s"
+    ace-mode="ace/mode/assembly_arm32"
+  >
+.global _complex_comparison
+_complex_comparison:                          // Start of the function
+    // TODO
+    bx lr                                     // Returns from the function
+
+  </pl-file-editor>
+</pl-question-panel>
+
+<pl-submission-panel>
+  <pl-external-grader-results></pl-external-grader-results>
+  <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

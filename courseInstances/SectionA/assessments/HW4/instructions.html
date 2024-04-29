@@ -1,0 +1,27 @@
+<h1>GPIO Readings</h1>
+<p>Scan datasheet Chapter 10 (~15 pages)</p>
+<p><i>Note: especially important registers are <b>bolded</b>.</i></p>
+<ul>
+    <li><b>SKIP</b>: 
+        <ul>
+            <li>Section 10.2.2 (Interrupt Control)</li>
+            <li>Section 10.2.4 (Commit Control)</li>
+            <li>Section 10.2.6 (Identification)</li>
+        </ul>
+    </li>
+    <li><b>READ</b> the following important registers in Section 10.5:
+        <ul>
+            <li>Register 1: GPIO Data (GPIO_PORTx_DATA_R)</li>
+            <li><b>Register 2</b>: GPIO Direction (GPIO_PORTx_DIR_R)</li>
+            <li>Register 10: GPIO Alternate Function Select (GPIO_PORTx_AFSEL_R)</li>
+            <li><b>Register 18</b>: GPIO Digital Enable (GPIO_PORTx_DEN_R)</li>
+            <li>Register 21: GPIO Analog Mode Select (GPIO_PORTx_AMSEL_R)</li>
+            <li>Register 22: GPIO Port Control (GPIO_PORTx_PCTL_R)</li>
+        </ul>
+    </li>
+    <li>Chapter 5.5, Registers Descriptions (Register 60 only):
+        <ul>
+            <li><b>Register 60</b>: General-Purpose Input/Output Run Mode Clock Gating Control (SYSCTL_RCGCGPIO_R)</li>
+        </ul>
+    </li>
+</ul>

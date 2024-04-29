@@ -1,0 +1,104 @@
+<div style="display:none;"><pl-code></pl-code></div> <!-- Forces pl-code styles to load, since we use it in pl-answer-panel and nowhere else -->
+
+<pl-question-panel>
+    <h1>UART Hardware Implementation</h1>
+    <p>
+        Like the last question, complete the below functions. This time, however, make use of the UART hardware device, instead of relying on software.
+    </p>
+    <p>
+        For serial_init(), follow the following parameters:
+        <ul>
+            <li>Use {{params.baud}} for the baud rate</li>
+            <li>Enable transmitting, disable receiving.</li>
+            <li>Don't use interrupts (ignore interrupt registers).</li>
+            <li>Set up the GPIO registers to allow UART0 to transmit. Preserve all other GPIO settings.</li>
+            <li>Frame format:
+                <ul>
+                    {{#params.frame_format}}
+                    <li>{{.}}</li>
+                    {{/params.frame_format}}
+                </ul>
+            </li>
+        </ul>
+    </p>
+    <p><i>Note: In order for grading to work properly, you MUST call wait() while busy-waiting. This is to prevent an infinite loop.</i></p>
+</pl-question-panel>
+
+<pl-file-editor
+    file-name="student_hardware.c"
+    ace-mode="ace/mode/c_cpp"
+>
+#include "/grade/tests/student_hardware.h" // Required to compile. Links your code with the grader
+
+/**
+ * Complete this function to:
+ *  * Match the specifications given in the software UART
+ *  * Enable transmitting, Disable receiving
+ *  * No interrupts used (so ignore registers related to interrupts)
+ *  * Set up the GPIO registers to allow UART0 to transmit. Preserve all other GPIO settings
+ *
+ * Initialize UART0 and associated GPIO Port / pins
+ */
+void serial_init() {
+    // TODO
+}
+
+/**
+ * Complete this function to transmit my_text using the hardware device UART0
+ * Don't forget to use wait() while busy-waiting!
+ */
+void serial_send(char my_text) {
+    // TODO
+}
+</pl-file-editor>
+
+<pl-answer-panel>
+    <pl-code language="c">
+void serial_init() {
+    // Enable clock for GPIO module A
+    SYSCTL_RCGCGPIO_R = SYSCTL_RCGCGPIO_R | 0b000001; // 0x01
+
+    // Enable alternate function and set peripheral functionality
+    GPIO_PORTA_AFSEL_R |= 0b00000010; // 0x02, UART0 TX
+    GPIO_PORTA_PCTL_R |= 0x00000010; // Set port A pin 1 to TX
+    GPIO_PORTA_DEN_R |= 0b00000010; // 0x02, enable pin 1 digital mode
+    GPIO_PORTA_DIR_R |= 0b00000010; // 0x02, set pin 1 (Tx) to output
+    
+    // Enable UART 0 clock
+    SYSCTL_RCGCUART_R |= 0x01;
+    //Disable UART0 while we set it up
+    UART0_CTL_R &= 0b1111111111111110; // 0xFFFE
+    // Set desired UART functionality
+    UART0_CTL_R = 0b0000000100000000; // 0x0100, Receive disabled, TX enabled
+    // Set baud rate ({{params.baud}} Baud)
+    UART0_IBRD_R = {{params.ibrd}}; // 16,000,000 / (16 * {{params.baud}}) = {{params.ibrd_full}}
+    UART0_FBRD_R = {{params.fbrd}}; // {{params.fbrd_part}}*64+.5 = {{params.fbrd_full}}
+    UART0_CC_R = 0; //Use system clock as UART clock source
+    // Set frame format
+    {{#params.masked}}
+    UART0_LCRH_R = {{params.lcrh_str}};
+    {{/params.masked}}
+    {{^params.masked}}
+    int bit = UART0_LCRH_R & 0x4;
+    UART0_LCRH_R = {{params.lcrh_str}};
+    UART0_LCRH_R |= bit;        // Don't change EPS bit
+    {{/params.masked}}
+    // Re-enable UART
+    UART0_CTL_R = UART0_CTL_R | 0x01;
+}
+
+void serial_send(char my_text) {
+    // Wait while TX FIFO is Full
+    while(UART0_FR_R & 0b00100000) // 0x20
+    {
+        wait();     // Don't forget to call this!
+    }
+    UART0_DR_R = my_text;
+}
+    </pl-code>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

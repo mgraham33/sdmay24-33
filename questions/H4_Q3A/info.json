@@ -1,0 +1,18 @@
+{
+    "uuid": "c595ecbf-f03d-40c0-8125-8b632328f2b5",
+    "title": "Binary Operators - Part 1",
+    "topic": "Binary Operators",
+    "tags": [
+        "sdmay24-33",
+        "wmhudson"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

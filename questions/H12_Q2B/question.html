@@ -1,0 +1,34 @@
+<pl-question-panel>
+  <h1>Bitwise Logic</h1>
+  <p>
+    Given the following declarations, write the assembly code to implement each functionality.
+  </p>
+  <pl-code
+  language="c"
+  prevent-select="true"
+  >
+// Variable declaration assumptions
+unsigned char ch1;         // Defined at {{params.ch1_adr}}
+unsigned char ch2;         // Defined at {{params.ch2_adr}}
+  </pl-code>
+
+  <p>
+    For this function: perform ch1 = ch1 | ch2
+  </p>
+
+  <pl-file-editor
+    file-name="student.s"
+    ace-mode="ace/mode/assembly_arm32"
+  >
+.global _logic
+_logic:                              // Start of the function
+    // TODO
+    bx lr                            // Returns from the function
+
+  </pl-file-editor>
+</pl-question-panel>
+
+<pl-submission-panel>
+  <pl-external-grader-results></pl-external-grader-results>
+  <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

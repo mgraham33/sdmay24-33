@@ -1,0 +1,170 @@
+<!--<pl-question-panel>-->
+  <p>Fill the final values of the Register file and Data memory after the following assembly code has been executed.  Vales in (  ) are the initial values before the assembly code is executed.  Show temporary values to help with giving partial credit, and if an entry is unknown after executing the code then leave blank.  Part a and part b are independent of each other</p>
+  <br>
+  <p>a)</p>
+   <p>MOVW R9, 0xFFF0
+  <br>MOVT R9, 0xFFFF
+  <br>MOVW R6, 0x10
+  <br>MOVW R7, 0x10
+  <br>LDR  R2, [R9], #4
+  <br>LDR  R3, [R9,  #4]
+  <br>ADDS R2, R9
+  <br>STR  R2, [R9, #4]!
+  <br>SUBS R6, R7
+  <br>BEQ  my_label
+  <br>MOVW R6, 0x20
+  <br>
+  <br>my_label;
+  <br>MOVW R6, 0x30
+      </p>
+<br>
+<p><b>Register File</b></p>
+<table border="1">
+  
+    <tr>
+        <th><b>Reg&nbsp;&nbsp;&nbsp;&nbsp;</b></th>
+        <th><b>Value</b></th>
+    </tr>
+    <tr>
+        <td>R15        </td>
+        <th><pl-integer-input answers-name="RV15" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R14        </td>
+        <th><pl-integer-input answers-name="RV14" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R13        </td>
+        <th><pl-integer-input answers-name="RV13" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R12        </td>
+        <th><pl-integer-input answers-name="RV12" allow-blank="true" label="0x" base="16"></pl-integer-input> </th>
+    </tr>
+        <tr>
+        <td>R11        </td>
+        <th><pl-integer-input answers-name="RV11" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R10        </td>
+        <th><pl-integer-input answers-name="RV10" allow-blank="true" label="0x" base="16"></pl-integer-input> </th>
+    </tr>
+        <tr>
+        <td>R9        </td>
+        <th><pl-integer-input answers-name="RV9" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R8        </td>
+        <th><pl-integer-input answers-name="RV8" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R7        </td>
+        <th><pl-integer-input answers-name="RV7" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R6        </td>
+        <th><pl-integer-input answers-name="RV6" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R5        </td>
+        <th><pl-integer-input answers-name="RV5" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R4        </td>
+        <th><pl-integer-input answers-name="RV4" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R3        </td>
+        <th><pl-integer-input answers-name="RV3" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R2        </td>
+        <th><pl-integer-input answers-name="RV2" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R1        </td>
+        <th><pl-integer-input answers-name="RV1" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+        <tr>
+        <td>R0        </td>
+        <th><pl-integer-input answers-name="RV0" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    
+    
+</table>
+<br>
+<p><b>Data Memory</b></p>
+<table border="1">
+    <tr>
+        <th><b>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></th>
+        <th><b>Value</b></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFFF</td>
+        <th><pl-integer-input answers-name="DM15" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFFE</td>
+        <th><pl-integer-input answers-name="DM14" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFFD</td>
+        <th><pl-integer-input answers-name="DM13" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFFC</td>
+        <th><pl-integer-input answers-name="DM12" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFFB</td>
+        <th><pl-integer-input answers-name="DM11" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFFA</td>
+        <th><pl-integer-input answers-name="DM10" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF9</td>
+        <th><pl-integer-input answers-name="DM9" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF8</td>
+        <th><pl-integer-input answers-name="DM8" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF7</td>
+        <th><pl-integer-input answers-name="DM7" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF6</td>
+        <th><pl-integer-input answers-name="DM6" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF5</td>
+        <th><pl-integer-input answers-name="DM5" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF4</td>
+        <th><pl-integer-input answers-name="DM4" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF3</td>
+        <th><pl-integer-input answers-name="DM3" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF2</td>
+        <th><pl-integer-input answers-name="DM2" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF1</td>
+        <th><pl-integer-input answers-name="DM1" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    <tr>
+        <td>0xFFFF_FFF0</td>
+        <th><pl-integer-input answers-name="DM0" allow-blank="true" label="0x" base="16"></pl-integer-input></th>
+    </tr>
+    
+</table>
+
+  
+<!--</pl-question-panel>-->

@@ -1,0 +1,2 @@
+startup / linker script - https://github.com/varun-venkatesh/bare-metal-arm/blob/master/src/chapter1/
+lm3s header files - https://github.com/ARM-software/CMSIS_4/tree/master/CMSIS

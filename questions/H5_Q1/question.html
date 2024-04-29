@@ -1,0 +1,101 @@
+<pl-question-panel>
+  <pre>
+    Read the following:
+    1) Datasheet Chapter 10: (~15 pages)
+      a) Skip: Sections 10.2.2 “Interrupt Control”, 10.2.4 “Commit Control”, 10.2.6 “Identification”.
+      b) In section 10.5 Register Descriptions, only Read the following important registers
+        i) Register 1: GPIO Data (GPIO_PORTX_DATA_R)
+        ii) Register 2: GPIO Direction (GPIO_PORTX_DIR_R)
+        iii) Register 10: GPIO Alternate Function Select (GPIO_PORTX_AFSEL_R)
+        iv) Register 18: GPIO Digital Enable (GPIO_PORTX_DEN_R)
+        v) Register 21: GPIO Analog Mode Select (GPIO_PORTX_AMSEL_R)
+        vi) Register 22: GPIO Port Control (GPIO_PORTA_PCTL_R)
+    c) Chapter 5.5, Registers Descriptions:
+      i) Register 60 General-Purpose Input/Output Run Mode Clock Gating Control
+         (SYSCTL_RCGCGPIO_R)
+    d) Datasheet section 23.4 (Table 23-5): GPIO Pins and Alternate Functions. Same as Textbook
+       Tables: Table 7.1, and Table 2.6
+
+    2) Textbook: Textbook chapters 2, 4, and 7 gives three takes on the content of Datasheet Chapter 10.
+    Read though these as needed to help you understand the Datasheet.
+      a) Section 2.6.3: GPIO (~6.5pages)
+        i) Light read of 2.6.3.1: “The System Clock”
+        ii) Skip sections 2.6.3.3.4 - 5: “Commit and Interrupt Control Regs”
+        iii) In Section 2.6.3.3.6 “Pad Control Regs”, skip GPIODR2R – GPIOSLR
+        iv) Skip 2.6.3.3.7: Identification Reg.
+      b) Section 4.5.7.2 – 4.5.7.2.2.2, and 4.5.7.2.5.3 (Fig 4.33: DRAModel.c code) (~6.5 pages)
+      c) Section 7.1, 7.2, 7.3, Example application 7.4: Figure 7.7. (~13 pages)
+</pre>
+</pl-question-panel>
+
+
+<pl-question-panel>
+  <pl-figure file-name={{params.picture}} directory="clientFilesQuestion"></pl-figure>
+</pl-question-panel>
+
+<table>
+  <tr>
+    <td>
+      <P> Replace box <b>1</b> with the correct Digital Function</P>
+      <pl-string-input answers_name="one" allow-blank=true label="(1)"></pl-string-input>
+    </td>
+    <td>
+      <P> Replace box <b>2</b> with the correct Digital Function</P>
+      <pl-string-input answers_name="two" allow-blank=true label="(2)"></pl-string-input>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <P> Replace box <b>3</b> with the correct Digital Function</P>
+      <pl-string-input answers_name="three" allow-blank=true label="(3)"></pl-string-input>
+    </td>
+    <td>
+      <P> Replace box <b>4</b> with the correct Digital Function</P>
+      <pl-string-input answers_name="four" allow-blank=true label="(4)"></pl-string-input>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <P> Replace box <b>5</b> of <b>{{params.a}}</b> with the correct value</P>
+      <pl-string-input answers_name="five" allow-blank=true label="(5)"></pl-string-input>
+    </td>
+    <td>
+      <P> Replace box <b>6</b> of <b>{{params.a}}</b> with the correct value</P>
+      <pl-string-input answers_name="six" allow-blank=true label="(6)"></pl-string-input>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <P> Replace box <b>7</b> of <b>{{params.a}}</b> with the correct value</P>
+      <pl-string-input answers_name="seven" allow-blank=true label="(7)"></pl-string-input>
+    </td>
+    <td>
+      <P> Replace box <b>8</b> of <b>{{params.a}}</b> with the correct value</P>
+      <pl-string-input answers_name="eight" allow-blank=true label="(8)"></pl-string-input>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <P> Replace box <b>9</b> of <b>{{params.a}}</b> with the correct value</P>
+      <pl-string-input answers_name="nine" allow-blank=true label="(9)"></pl-string-input>
+    </td>
+    <td>
+      <P> Replace box <b>10</b> of <b>{{params.a}}</b> with the correct value</P>
+      <pl-string-input answers_name="ten" allow-blank=true label="(10)"></pl-string-input>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <P> Replace box <b>11</b> of <b>{{params.a}}</b> with the correct value</P>
+      <pl-string-input answers_name="eleven" allow-blank=true label="(11)"></pl-string-input>
+    </td>
+    <td>
+      <P> Replace box <b>12</b> of <b>{{params.a}}</b> with the correct value</P>
+      <pl-string-input answers_name="twelve" allow-blank=true label="(12)"></pl-string-input>
+    </td>
+  </tr>
+</table>
+  

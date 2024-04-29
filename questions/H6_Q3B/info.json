@@ -1,0 +1,18 @@
+{
+    "uuid": "f06f52b9-1eaa-4b3c-a8ce-16a37ce9bd19",
+    "title": "Interrupt-based Device Interaction",
+    "topic": "Interrupts",
+    "tags": [
+        "sdmay24-33",
+        "wmhudson"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

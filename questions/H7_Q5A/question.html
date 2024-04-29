@@ -1,0 +1,28 @@
+<pl-question-panel>
+  <p>
+    In this question data received by UART 0 will be processed by an Interrupt Service Routine.
+  </p>
+  <p>
+    Write the serial_init() function to initialize UART0 as follows:<br>
+  </p>
+  <ul>
+    <li>Receive Only</li>
+    <li>9,600 baud rate</li>
+    <li>8 data bits</li>
+    <li>Even parity</li>
+    <li>2 stop bit</li>
+    <li>Disable FIFOs</li>
+    <li>Enable UART Receive interrupts only</li>
+  </ul>
+  <p>You may initialize unrelated control bits as you wish.</p>
+</pl-question-panel>
+<pl-file-editor
+    file-name="student_uart.c"
+    source-file-name="student_template.c"
+    ace-mode="ace/mode/c_cpp"
+></pl-file-editor>
+
+<pl-submission-panel>
+  <pl-external-grader-results></pl-external-grader-results>
+  <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

@@ -1,0 +1,18 @@
+<pl-question-panel>
+    <h1>Status Register</h1>
+</pl-question-panel>
+<p>
+    What is the value of the Z bit after executing the following sequence of instructions?
+</p>
+<pl-code>
+MOV   R{{params.r0}}, #0
+MOVS  R{{params.r1}}, R{{params.r0}}
+</pl-code>
+
+<pl-integer-input answers-name="z" label="Z = "></pl-integer-input>
+
+<pl-answer-panel>
+    <p>
+        The Zero (Z) bit will be 1, since moving R{{params.r0}} into R{{params.r1}} with MOVS will give a value of 0 in the result register (R2). Thus the Zero bit/flag will be set to 1.
+    </p>
+</pl-answer-panel>

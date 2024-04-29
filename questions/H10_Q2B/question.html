@@ -1,0 +1,23 @@
+<pl-question-panel>
+    <h1>Square Waves</h1>
+    <p>
+        <b>Part B:</b> Now assume there is no PWM mode, and you have to use a Generic Waveform Generation approach
+        (i.e. using an Interrupt Service Routine) to generate a symmetric square wave. Also assume that
+        the time to setup and execute the code in your ISR takes {{params.overhead}} us (i.e. the CPU overhead involved
+        with the ISR). What CPU utilization (i.e. percent of the CPU time) would be spent handling interrupts for:
+    </p>
+</pl-question-panel>
+    <p>
+        Generating a square wave with a {{params.b1}}ms period
+    </p>
+    <p><pl-number-input answers-name="b1" label="CPU Overhead =" suffix="%"></pl-number-input></p>
+    <br>
+    <p>
+        Generating a square wave with a {{params.b2}}us period
+    </p>
+    <p><pl-number-input answers-name="b2" label="CPU Overhead =" suffix="%"></pl-number-input></p>
+    <br>
+    <p>
+        Generating a square wave with a {{params.b3}}us period
+    </p>
+    <p><pl-number-input answers-name="b3" label="CPU Overhead =" suffix="%"></pl-number-input></p>

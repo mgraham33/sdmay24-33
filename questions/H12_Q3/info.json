@@ -1,0 +1,18 @@
+{
+    "uuid": "a9bc7588-fa13-445b-bacc-92dca6953c01",
+    "title": "If-Else",
+    "topic": "Assembly",
+    "tags": [
+        "wmhudson",
+        "fa23"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/armgrader:v1.2",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

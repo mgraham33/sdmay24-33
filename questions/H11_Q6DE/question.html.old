@@ -1,0 +1,159 @@
+<style>
+    .custom_table {
+        text-align: center;
+    }
+    tr > th {
+        padding: .5em;
+    }
+    .bold_table {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+    .bold_table > td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .bold_table > td > table {
+        width: 100%;
+    }
+</style>
+
+<pl-question-panel>
+    <h1>Assembly Basics</h1>
+</pl-question-panel>
+<p>
+    For the following instructions, using the "ARM Instruction Set Manual", give the general and specific binary encodings.
+</p>
+<pl-code>
+STR R5, [R7, #4]!
+MUL R8, R10, R9
+</pl-code>
+<p>* Currently not randomized due to uncertanty about the ease of manual grading</p>
+
+<p>
+    The general encoding uses input names in the bit places, while specific encoding is the encoding specific to the instruction given.
+</p>
+
+<pl-card header="Example" title="ADDS  R5, R7, R1">
+    <table class="custom_table">
+        <tr><th colspan="16">General Encoding</th></tr>
+        <tr>
+            <th>15</th>
+            <th>14</th>
+            <th>13</th>
+            <th>12</th>
+            <th>11</th>
+            <th>10</th>
+            <th>9</th>
+            <th>8</th>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+        <tr class="bold_table">
+            <td colspan="3">
+                <table>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td colspan="3">Rm</td>
+            <td colspan="3">Rn</td>
+            <td colspan="3">Rd</td>
+        </tr>
+    </table>
+
+    <table class="custom_table">
+        <tr><th colspan="16">Specific Encoding</th></tr>
+        <tr>
+            <th>15</th>
+            <th>14</th>
+            <th>13</th>
+            <th>12</th>
+            <th>11</th>
+            <th>10</th>
+            <th>9</th>
+            <th>8</th>
+            <th>7</th>
+            <th>6</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+            <th>0</th>
+        </tr>
+        <tr class="bold_table">
+            <td colspan="3">
+                <table>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </td>
+            <td>0</td>
+            <td>0</td>
+            <td colspan="3">
+                <table>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="3">
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="3">
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</pl-card>
+
+<pl-rich-text-editor file-name="answer.html"></pl-rich-text-editor>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

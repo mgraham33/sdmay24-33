@@ -1,0 +1,37 @@
+<h2>Timer Readings</h2>
+<ul>
+    <li><b>SKIP</b>:
+        <ul>
+            <li>Section 11.3.2.2: Real-Time Clock Timer Mode</li>
+            <li>Section 11.3.2.3: Input Edge-Count Mode</li>
+            <li>Sections 11.3.3 - 11.3.5: Wait-for-trigger Mode, Synchronizing GP Timer Blocks, DMA</li>
+            <li>Section 11.3.7: Accessing Concatenated 32/64-bit Wide GPTM Register Values</li>
+        </ul>
+    </li>
+    <li><b>IMPORTANT</b> registers:
+        <ul>
+            <li>Register 1: GPTM Configuration (GPTMCFG): TIMER#_CFG_R</li>
+            <li>Register 2, 3: GPTM Timer A(B) Mode (GPTMTA(B)MR): TIMER#_TA(B)MR_R</li>
+            <li>Register 4: GPTM Control (GPTMCTL): TIMER#_CTL_R</li>
+            <li>Register 6: GPTM Interrupt Mask (GPTMIMR): TIMER#_IMR_R</li>
+            <li>Register 7: GPTM Raw Interrupt Status Mask (GPTMRIS): TIMER#_RIS_R</li>
+            <li>Register 8: GPTM Masked Interrupt Status (GPTMMIS): TIMER#_MIS_R</li>
+            <li>Register 9: GPTM Interrupt Clear (GPTMICR): TIMER#_ICR_R</li>
+            <li>Register 10, 11: GPTM Timer A(B) Interval Load (GPTMTA(B)ILR): TIMER#_TA(B)ILR_R</li>
+            <li>Register 12, 13: GPTM Timer A(B) Match (GPTMTA(B)MATCHR): TIMER#_TA(B)MATCHR_R</li>
+            <li>Register 14, 15: GPTM Timer A(B) Prescale (GPTMTA(B)PR): TIMER#_TA(B)PR_R</li>
+            <li>Register 16, 17: GPTM Timer A(B) Prescale Match (GPTMTA(B)PMR): TIMER#_TA(B)PMR_R</li>
+            <li>Register 18, 19: GPTM Timer A(B) (GPTMTA(B)R): TIMER#_TA(B)R_R</li>
+            <li>Register 20, 21: GPTM Timer A(B) Value (GPTMTA(B)V): TIMER#_TA(B)V_R</li>
+            <li>Section 5.5, page 338: Register 59: GP Timer Run Mode Clk Gating Control: SYSCTL_RCGCTIMER_R</li>
+        </ul>
+    </li>
+    <li><b>Textbook 9.1 - 9.2</b>: a good supplement to the Datasheet, as needed (~30 pages)
+        <ul>
+            <li>Note: Figure 9.1 is useful</li>
+            <li>Note: Figure 9.10 is a useful Periodic Timer code example.</li>
+            <li>Note: Figure 9.14 is a useful Input-Edge Time Mode (Input capture) code example.</li>
+            <li>Note: Figure 9.17 is a useful PMW Mode code example.</li>
+        </ul>
+    </li>
+</ul>

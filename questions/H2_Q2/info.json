@@ -1,0 +1,19 @@
+{
+    "uuid": "667811ba-8227-4f1b-a22d-8657b5b012bd",
+    "title": "C strlen Function",
+    "topic": "C Strings",
+    "tags": [
+        "Murawski",
+        "fa23",
+        "ccosta22"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/test.py"
+    }
+}

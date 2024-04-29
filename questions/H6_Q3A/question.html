@@ -1,0 +1,27 @@
+<pl-question-panel>
+    <h1>Interrupt-based Device Configuration</h1>
+    <p>
+        Give code for function Camera_Configure() to configure the <a href="http://class.ece.iastate.edu/cpre288/resources/docs/CPRE288-Datasheet-Trainer.pdf">"CPRE 288: Datasheet Trainer"</a>
+        Camera Controller as follows, <b>and</b> does not return until the Camera configuration update has completed.
+    </p>
+    <ul>
+        <li>Color Mode: {{params.colormode}}</li>
+        <li>Resolution: {{params.resolution}}</li>
+        <li>Speed: {{params.speed}}</li>
+        <li>Interrupts: {{params.interrupts}}</li>
+    </ul>
+    <p>
+        <i>Note: use the 'wait()' function when busy waiting for the update, this prevents an infinite loop.</i>
+    </p>
+</pl-question-panel>
+
+<pl-file-editor
+    file-name="student.c"
+    source-file-name="template.c"
+    ace-mode="ace/mode/c_cpp"
+></pl-file-editor>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

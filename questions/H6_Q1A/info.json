@@ -1,0 +1,12 @@
+{
+    "uuid": "f3190d59-737e-4299-b0e0-d1b8c50b16e2",
+    "title": "Interrupt Configuration Registers",
+    "topic": "Interrupts",
+    "tags": [
+        "sdmay24-33",
+        "wmhudson"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "Manual"
+}

@@ -1,0 +1,77 @@
+{
+    "uuid": "e6cd951a-7253-4056-96df-f96f520e03bb",
+    "type": "Homework",
+    "title": "HW9",
+    "set": "Homework",
+    "number": "9",
+    "allowAccess": [
+        
+    ],
+    "zones": [
+        {
+            "title": "Section 1",
+            "questions": [
+                {
+                    "id": "H9_Q1",
+                    "points": 2,
+                    "maxPoints": 10
+                },
+                {
+                    "id": "H9_Q2A",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q2B",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q2C",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q3A",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q3B",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q3C",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q4A",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q4B",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q4C",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q5A",
+                    "points": 3,
+                    "maxPoints": 6
+                },
+                {
+                    "id": "H9_Q5B",
+                    "points": 3,
+                    "maxPoints": 6
+                }
+            ]
+        }
+    ]
+}

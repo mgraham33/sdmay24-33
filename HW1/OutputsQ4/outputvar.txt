@@ -1,0 +1,12 @@
+unsigned char apple;
+unsigned short apple;
+unsigned int apple;
+unsigned long apple;
+signed char apple;
+signed short apple;
+signed int apple;
+signed long apple;
+ char apple;
+ short apple;
+ int apple;
+ long apple;

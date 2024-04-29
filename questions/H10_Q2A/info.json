@@ -1,0 +1,18 @@
+{
+    "uuid": "c315f59f-9806-4357-b348-5e43380dde06",
+    "title": "PWM Initialization",
+    "topic": "PWM",
+    "tags": [
+        "sdmay24-33",
+        "wmhudson"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

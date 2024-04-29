@@ -1,0 +1,83 @@
+{
+    "UARTLCRH": [
+        {
+            "name": "SRS",
+            "fullname": "UART Stick Parity Select",
+            "bit": 7,
+            "options": [
+                "Stick parity bit disabled",
+                "Stick parity bit enabled"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "WLEN",
+            "fullname": "UART Word Length",
+            "bit": 5,
+            "options": [
+                "5 bits",
+                "6 bits",
+                "7 bits",
+                "8 bits"
+            ],
+            "width": 2,
+            "default": 0
+        },
+        {
+            "name": "FEN",
+            "fullname": "UART Enable FIFOs",
+            "bit": 4,
+            "options": [
+                "FIFOs disabled",
+                "FIFOs enabled"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "STP2",
+            "fullname": "UART Two Stop Bits Select",
+            "bit": 3,
+            "options": [
+                "One stop bit",
+                "Two stop bits"
+            ],
+            "width": 1,
+            "default": 0
+        }, 
+        {
+            "name": "EPS",
+            "fullname": "UART Even Parity Select",
+            "bit": 2,
+            "options": [
+                "Odd parity",
+                "Even parity"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "PEN",
+            "fullname": "UART Parity Enable",
+            "bit": 1,
+            "options": [
+                "Parity disabled",
+                "Parity enabled"
+            ],
+            "width": 1,
+            "default": 0
+        },
+        {
+            "name": "BRK",
+            "fullname": "UART Send Break",
+            "bit": 0,
+            "options": [
+                "Disable send break",
+                "Enable send break"
+            ],
+            "width": 1,
+            "default": 0
+        }
+    ]
+}

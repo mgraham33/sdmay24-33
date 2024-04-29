@@ -1,0 +1,29 @@
+<pl-question-panel>
+  <p>Assume the TM4C123 does not have Input Capture hardware or Interrupts. Write a C program to save TIMER1A’s value (i.e. TIMER1_TAR_R) when a positive edge event occurs on PortD, pin4. Note/Hint: you may want to complete part c first. *Add data sheet
+  </p>
+  <p>
+      Assume GPIO has already been configured properly for you. The Timer has already been configured into Periodic Mode for you
+  </p>
+  <p>
+      Complete the code
+  </p>
+</pl-question-panel>
+
+<pl-question-panel>
+<pl-code language="C">int main(void)
+{
+  unsigned int rising_edge_time;
+   // Assume GPIO has already been configured properly
+   // Assume the Timer has been placed in a Periodic Mode
+   while(1) {
+    if(CODE){
+      while(CODE){}
+      rising_edge_time = CODE;
+      }
+    }
+  }
+</pl-code>
+<pl-string-input remove-spaces="true" label="if(" correct-answer="(GPIO_PORTD_DATA_R & 0b00010000) == 0" display="inline" answers-name="if" suffix=" ) {"></pl-string-input>
+<pl-string-input remove-spaces="true" label="while(" correct-answer="!(GPIO_PORTD_DATA_R & 0b00010000) == 0" display="inline" answers-name="while" suffix=" ) {}"></pl-string-input>
+<pl-string-input remove-spaces="true" label="rising_edge_time = " correct-answer="TIMER1_TAR_R" display="inline" answers-name="store" suffix=";">
+</pl-question-panel>

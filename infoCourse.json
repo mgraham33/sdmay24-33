@@ -1,0 +1,56 @@
+{
+    "uuid": "087dcc84-c739-48b3-b55f-27a24b000a75",
+    "name": "CPR E 288",
+    "title": "sdmay24-33",
+    "options": {
+        "useNewQuestionRenderer": true
+    },
+    "comment": "Add additional assessment sets here. Default ones are listed here: https://prairielearn.readthedocs.io/en/latest/course/#assessment-sets.",
+    "assessmentSets": [
+        {"abbreviation": "L", "name": "Lab", "heading": "Labwork", "color": "gray1"}
+    ],
+    "assessmentModules": [
+        {"name": "IntroModule", "heading": "Intro to Embedded Systems"},
+        {"name": "EmbeddedBasics", "heading": "Intro to Embedded C"},
+        {"name": "Exam1", "heading": "Exam 1"},
+        {"name": "EmbeddedIntermediate", "heading": "Low Level Embedded C"},
+        {"name": "Exam2", "heading": "Exam 2"},
+        {"name": "Assembly", "heading": "ARM Assembly"},
+        {"name": "FinalModule", "heading": "Finals"}
+    ],
+    "topics": [
+        {"name": "C Programming", "color": "orange1", "description": "C Programming basics"},
+        {"name": "TM4C123G", "color": "orange1", "description": "TM4C123G Microcontroller specifics"},
+        {"name": "Embedded C Programming", "color": "orange1", "description": "Interrupts, libraries"},
+        {"name": "Serial Communication", "color": "orange1", "description": "USART & SPI serial communication"},
+        {"name": "Analog-Digital Conversion", "color": "orange1", "description": "Analog to digital conversion"},
+        {"name": "Time Processing", "color": "orange1", "description": "Distance estimating, servo control, PWM"},
+        {"name": "ARM Assembly", "color": "orange1", "description": "Introduction to ARM assembly language"},
+        {"name": "LCD Banner", "color": "pink1", "description": "LCD Banner (Hello World) introduction"},
+        {"name": "iRobot Open Interface", "color": "pink1", "description": "iRobot Open Interface introduction"},
+        {"name": "I/O Interface", "color": "pink1", "description": "Buttons, knob control, motors, etc"}
+    ],
+    "tags": [
+        {"name": "sdmay24-33", "color": "gray1", "description": "Questions made by senior design team sdmay24-33"},
+        {"name": "wmhudson", "color": "gray1", "description": "Questions written by wmhudson"},
+        {"name": "mgraham", "color": "gray1", "description": "Questions written by mgraham"},
+        {"name": "ccosta22", "color": "gray1", "description": "Questions written by ccosta22"},
+        {"name": "weberski", "color": "gray1", "description": "Questions written by weberski"},
+        {"name": "awinters", "color": "gray1", "description": "Questions written by awinters"},
+        {"name": "murawksi", "color": "gray1", "description": "Questions written by murawski"},
+
+
+
+        {"name": "mwest", "color": "gray1", "description": "Question originally written by mwest"},
+        {"name": "tbretl", "color": "blue1", "description": "Question originally written by tbretl"},
+        {"name": "mfsilva", "color": "blue1", "description": "Question originally written by mfsilva"},
+        {"name": "balamut2", "color": "orange1", "description": "Question originally written by balamut2"},
+        {"name": "ressick2", "color": "gray1", "description": "Question originally written by ressick2"},
+        {"name": "eliving2", "color": "gray1", "description": "Question originally written by eliving2"},
+        {"name": "nwalter2", "color": "pink1", "description": "Question originally written by nwalter2"},
+        {"name": "nnytko2", "color": "turquoise1", "description": "Question originally written by nnytko2"},
+        {"name": "astec", "color": "orange2", "description": "Question originally written by andrewstec"},
+        {"name": "pearl", "color": "yellow3", "description": "Question originally written by pearl"},
+        {"name": "rstats", "color": "blue2", "description": "Question requires the use of R"}
+    ]
+}

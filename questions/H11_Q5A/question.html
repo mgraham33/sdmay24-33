@@ -1,0 +1,24 @@
+<pl-question-panel>
+    <h1>Load and Store</h1>
+</pl-question-panel>
+<p>
+    Consider the following load instruction
+</p>
+<pl-code>
+LDRB R{{params.dst}}, [R{{params.src}}, #0x{{params.value}}]
+</pl-code>
+
+<p>
+    Which register holds the base address to load from?
+</p>
+<p><pl-integer-input answers-name="src" label="R" placeholder="0 to 15"></pl-integer-input></p>
+
+<p>
+    What is the destination register?
+</p>
+<p><pl-integer-input answers-name="dst" label="R" placeholder="0 to 15"></pl-integer-input></p>
+
+<p>
+    How many bytes are loaded from memory?
+</p>
+<p><pl-integer-input answers-name="loaded" suffix="byte(s)"></pl-integer-input></p>

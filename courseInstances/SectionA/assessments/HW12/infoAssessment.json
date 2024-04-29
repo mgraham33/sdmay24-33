@@ -1,0 +1,47 @@
+{
+    "uuid": "ab3c4900-3a47-49f5-9411-20e17eaf0408",
+    "type": "Homework",
+    "title": "Assembly Programming",
+    "set": "Homework",
+    "module": "Assembly",
+    "number": "12",
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2023-10-14T00:00:01",
+            "endDate": "9999-04-01T23:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Assembly Memory Mapping",
+            "questions": [
+                {"id": "H12_Q1A", "points": 2,"maxPoints": 10},
+                {"id": "H12_Q1B", "points": 3, "maxPoints": 6}
+            ]
+        },
+        {
+            "title": "Assembly Variables",
+            "questions": [
+                {"id": "H12_Q2A", "points": 2,"maxPoints": 10},
+                {"id": "H12_Q2B", "points": 3, "maxPoints": 6},
+                {"id": "H12_Q2C", "points": 1,"maxPoints": 5},
+                {"id": "H12_Q2D", "points": 2,"maxPoints": 10},
+                {"id": "H12_Q2E", "points": 3, "maxPoints": 6},
+                {"id": "H12_Q2F", "points": 1,"maxPoints": 5}
+            ]
+        },
+        {
+            "title": "Assembly Flow Control",
+            "questions": [
+                {"id": "H12_Q3", "points": 2,"maxPoints": 10},
+                {"id": "H12_Q4", "points": 3, "maxPoints": 6},
+                {"id": "H12_Q5", "points": 1,"maxPoints": 5},
+                {"id": "H12_Q6", "points": 2,"maxPoints": 10},
+                {"id": "H12_Q7", "points": 3, "maxPoints": 6}
+            ]
+        }
+    ],
+    "text": ""
+}

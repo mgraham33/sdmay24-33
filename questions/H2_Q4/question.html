@@ -1,0 +1,32 @@
+<pl-question-panel>
+  <p><b>Given:</b></p>
+
+  <pl-code language="c" prevent-select="true">
+    char message[100];
+    char str1[] = "{{params.str1}}";
+    char str2[] = "{{params.str2}}";
+    int num = {{params.num}};
+    char ch1 = {{params.ch1}};
+    char ch2 = {{params.ch2}}; </pl-code>
+
+  <p><b>Predict the C-string contained in message after each sprintf</b></p>
+</pl-question-panel>
+
+<p><pl-code language="c" prevent-select="true">sprintf(message, "Our %s is moving, str2");</pl-code></p>
+<pl-string-input answers-name="a" allow-blank=true></pl-string-input>
+<br>
+<p><pl-code language="c" prevent-select="true">sprintf(message, "Read %d datasheet pages every week", num);</pl-code>
+</p>
+<pl-string-input answers-name="b" allow-blank=true></pl-string-input>
+<br>
+<p><pl-code language="c" prevent-select="true">sprintf(message, "CprE%c%c%c is %s!"", ch1, ch2, ch2, "fun");</pl-code>
+</p>
+<pl-string-input answers-name="c" allow-blank=true></pl-string-input>
+<br>
+<p><pl-code language="c" prevent-select="true">sprintf(message, "Move the %s forward for %d cm", str2+3,
+    num/2);</pl-code></p>
+<pl-string-input answers-name="d" allow-blank=true></pl-string-input>
+<br>
+<p><pl-code language="c" prevent-select="true">sprintf(message, "The ASCII value for %c is decimal %d and hex %X", ch1,
+    ch1, ch1);</pl-code></p>
+<pl-string-input answers-name="e" allow-blank=true></pl-string-input>

@@ -1,0 +1,83 @@
+<pl-question-panel>
+  <pl-figure file-name={{params.picture}} directory="clientFilesQuestion"></pl-figure>
+  <p>What is the command to start port {{params.one}} and {{params.two}} clock (Don't forget semicolons)</p>
+</pl-question-panel>
+<pl-string-input answers_name="Start" allow-blank=true></pl-string-input>
+
+<pl-question-panel>
+    <p>What is the command to enable digital functionality of port {{params.one}}</p>
+</pl-question-panel>
+<pl-string-input answers_name="enable1" allow-blank=true></pl-string-input>
+
+<pl-question-panel>
+    <p>What is the command to enable digital functionality of port {{params.two}}</p>
+</pl-question-panel>
+<pl-string-input answers_name="enable2" allow-blank=true></pl-string-input>
+
+<pl-question-panel>
+    <p>What is the command to set direction of port {{params.one}} pins, based on the figure above</p>
+</pl-question-panel>
+<pl-string-input answers_name="set1" allow-blank=true></pl-string-input>
+
+<pl-question-panel>
+    <p>What is the command to set direction of port {{params.two}} pins, based on the figure above</p>
+</pl-question-panel>
+<pl-string-input answers_name="set2" allow-blank=true></pl-string-input>
+
+<br>
+<br>
+<br>
+
+
+<pl-question-panel>
+<p>
+  Part B.<br>Sort the following C code that will read in button values, and send those values to their corresponding LEDs (i.e. B0 corresponds to L0), based on the figure in part a.
+</p>
+
+<p>There are 4 buttons (B0, B1, B2, B3), whose values should be stored in elements 0 to 3 of buttons (i.e. button B0 should be stored in buttons[0]). There are four LEDs (L0, L1, L2, L3) that can have a value of 1 or 0 written to them. All wires that do not have an LED or button connected should have their value persevered (i.e. your code should not change their value).</p>
+</pl-question-panel>
+
+<pl-order-blocks answers-name="conjunction-implies-conjunction" source-blocks-order="random" grading-method="dag" solution-placement="right">
+  <pl-answer correct="true" tag="1" depends=""> 
+    void main(void)<br>
+    {<br>
+unsigned char buttons[4]; init_ports(); // from part a<br>
+// Read in each buttons into buttons array buttons[0] = (GPIO_PORTB_DATA_R >> 6) & 0x01; buttons[1] = (GPIO_PORTB_DATA_R >> 0) & 0x01; buttons[2] = (GPIO_PORTC_DATA_R >> 7) & 0x01;<br> buttons[3] = (GPIO_PORTC_DATA_R >> 4) & 0x01;
+
+  </pl-answer>
+  <pl-answer correct="true" tag="2" depends="1">
+       // Give button values to LEDs<br>
+// LED 0: Port B, bit 4<br>
+if(button[0] == 1) // check if B0 is a 0 or 1 <br>{<br> //B0==1,sowritea1toL0<br>
+GPIO_PORTB_DATA_R = (GPIO_PORTB_DATA_R | 0b00010000); <br>}<br>
+else<br>
+{ <br>//B0==0,sowritea0toL0<br>
+GPIO_PORTB_DATA_R = (GPIO_PORTB_DATA_R & 0b11101111); <br>}
+ 
+  </pl-answer>
+  <pl-answer correct="true" tag="3" depends="2"> 
+        // LED 1: Port B, bit 2<br>
+if(button[1] == 1) // check if B1 is a 0 or 1 <br>{<br> //B1==1,sowritea1toL1<br>
+GPIO_PORTB_DATA_R = (GPIO_PORTB_DATA_R | 0b00000100); <br>}<br>
+else<br>
+{ <br>//B1==0,sowritea0toL1<br>
+GPIO_PORTB_DATA_R = (GPIO_PORTB_DATA_R & 0b11111011); <br>}
+  </pl-answer>
+  <pl-answer correct="true" tag="4" depends="3"> 
+        // LED 2: Port C, bit 2<br>
+if(button[2] == 1) // check if B2 is a 0 or 1 <br>{<br> //B2==1,sowritea1toL2<br>
+GPIO_PORTC_DATA_R = (GPIO_PORTC_DATA_R | 0b00000100); <br>}<br>
+else<br>
+{ //B2==0,sowritea0toL2<br>
+GPIO_PORTC_DATA_R = (GPIO_PORTC_DATA_R & 0b11111011); <br>}
+  </pl-answer>
+  <pl-answer correct="true" tag="5" depends="4">
+      // LED 3: Port C, bit 0<br>
+if(button[3] == 1) // check if B3 is a 0 or 1 <br>{<br> //B3==1,sowritea1toL3<br>
+GPIO_PORTC_DATA_R = (GPIO_PORTC_DATA_R | 0b00000001); <br>}<br>
+else<br>
+{ <br>//B3==0,sowritea0toL3<br>
+GPIO_PORTC_DATA_R = (GPIO_PORTC_DATA_R & 0b11111110); <br>}<br>
+}
+  </pl-answer>
+</pl-order-blocks>

@@ -1,0 +1,56 @@
+<pl-question-panel>
+    <h1>C Data Structure Memory Mapping</h1>
+    <p>Consider the following C code:</p>
+    <pl-code
+        language="c"
+        prevent-select="true"
+    >
+typedef struct coord
+{
+    char x;
+    char y;
+} coord_t;
+
+coord_t *coord_ptr;
+int *num_ptr;
+int **p_ptr = &num_ptr;
+char a = {{params.char_a}};
+coord_t my_coord[{{params.my_coord_size}}];
+int num_array[{{params.num_array_size}}] = {{params.num_array}};
+
+int main() {
+    coord_ptr = my_coord;
+    num_ptr = num_array;
+    my_coord[{{params.my_coord_x}}].x = {{params.my_coord_x_value}};
+    coord_ptr{{params.coord_ptr_delta}};
+    coord_ptr->y = {{params.coord_ptr_y_value}};
+    **p_ptr = {{params.p_ptr_value0}};
+    num_ptr = num_ptr + {{params.num_ptr_delta}};
+    *num_ptr = {{params.num_ptr_value}};
+    p_ptr++;
+    *p_ptr = {{params.p_ptr_value1}};
+}
+    </pl-code>
+    <p>Assuming all memory values are initialized as 0x00 on boot, fill the memory table with each address' value.</p>
+</pl-question-panel>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .table_124161 td, .table_124161 th {
+        padding: 5px;
+        text-align: center;
+    }
+</style>
+
+<table class="table_124161">
+    <tr>
+        <th>Address</th>
+        <th>Variable Name</th>
+        <th>Value</th>
+    </tr>
+    {{{params.table}}}
+</table>
+

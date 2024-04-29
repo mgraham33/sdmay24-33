@@ -1,0 +1,69 @@
+<h4><font color="4f81bd"><u><b>Timer Readings:</b></u></font></h4>
+<p>Datasheet Reading Guide: <u><b>General-Purpose Timers</b></u>: Chapter 11 (~15 pages on functionality)
+    <br>&ensp;a) <u>Skip the following</u>
+    <br>&emsp;i) &ensp;Skip: Section 11.3.2.2: Real-Time Clock Timer mode
+    <br>&emsp;ii)&ensp;Skip: Section 11.3.2.3: Input Edge-Count mode
+    <br>&emsp;iii) Skip: Section 11.3.3 - 11.3.5: Wait-for-Trigger mode, Sychronizing GP Timer Blocks, DMA
+    <br>&emsp;iv) Skip: Section 11.3.7: Accessing Concatenated 32/64-Bit Wide GPTM Register Values
+    <br>&ensp;b) <u>Important registers:</u>
+    <br>&emsp;i) &ensp;&ensp;Register 1: GPTM Configuration (GPTMCFG): TIMER#_CFG_R
+    <br>&emsp;ii)&ensp;&ensp;Register 2,3: GPTM Timer A(B) Mode (GPTMTA(B)MR): TIMER#_TA(B)MR_R
+    <br>&emsp;iii) &ensp;Register 4: GPTM Control (GPTMCTL): TIMER#_CTL_R
+    <br>&emsp;iv) &ensp;Register 6: GPTM Interrupt Mask (GPTMIMR): TIMER#_IMR_R
+    <br>&emsp;v)&ensp;&ensp;Register 7: GPTM Raw Interrupt Status (GPTMRIS): TIMER#_RIS_R
+    <br>&emsp;vi) &ensp;Register 8: GPTM Masked Interrupt Status (GPTMMIS): TIMER#_MIS_R
+    <br>&emsp;vii)&ensp;Register 9: GPTM Interrupt Clear (GPTMICR): TIMER#_ICR_R
+    <br>&emsp;viii) Register 10,11: GPTM Timer A(B) Interval Load (GPTMA(B)ILR): TIMER#_TA(B)ILR_R
+    <br>&emsp;ix) &ensp;Register 12,13: GPTM TIMER A(B) Match (GPTMTA(B)MATCHR): TIMER#_TA(B)MATCHR_R
+    <br>&emsp;x)&ensp;&ensp;Register 14,15: GPTM TIMER A(B) Presacle (GPTMTA(B)PR): TIMER#_TA(B)PR_R
+    <br>&emsp;xi) &ensp;Register 16,17: GPTM Timer A Prescale Match (GPTMTAPMR): TIMER#_TA(B)PMR_R
+    <br>&emsp;xii)&ensp;Register 18,19: GPTM Timer A (GPTMTAR): TIMER#_TA(B)R_R
+    <br>&emsp;xiii) Register 20,21: GPTM Timer A(B) Value (GPTMTAV): TIMER#_TA(B)V_R
+    <br>&emsp;xiv) Sec 5.5, page 388: Register 59: GP Timer Run Mode Clk Gating Control: SYSCTL_RCGCTIMER_R
+    <br>&ensp;c) <u>Textbook 9.1-9.2</u>: a good supplement to the Datasheet, as needed (~30 Pages)
+    <br>&emsp;i) &ensp;<u>Note:</u> Figure 9.1 is useful
+    <br>&emsp;ii)&ensp;<u>Note:</u> Figure 9.10 is a useful Periodic Timer code example
+    <br>&emsp;iii) <u><span style="Background-color: red;">Note:</span></u> Figure 9.14 is a useful Input-Edge Time Mode (Input capture) code example
+    <br>&emsp;iv) <u><span style="Background-color: red;">Note:</span></u> Figure 9.17 is a useful PMW Mode code example
+</p>
+
+<h4><font color="4f81bd"><b>Question 2: General Timer Question</b></font></h4>
+<p>Briefly descrivbe each Timer mode given in Datasheet Table 11.3 (or Textbook Table 9.1).
+<br>Please enter your answers as they appear on the table</p>
+
+<p>Timer Mode 1:
+    <pl-string-input answers-name="timer1"></pl-string-input>
+</p>
+<p>Timer Mode 2:
+    <pl-string-input answers-name="timer2"></pl-string-input>
+</p>
+<p>Timer Mode 3:
+    <pl-string-input answers-name="timer3"></pl-string-input>
+</p>
+<p>Timer Mode 4:
+    <pl-string-input answers-name="timer4"></pl-string-input>
+</p>
+<p>Timer Mode 5:
+    <pl-string-input answers-name="timer5"></pl-string-input>
+</p>
+<p>Timer Mode 6:
+    <pl-string-input answers-name="timer6"></pl-string-input>
+</p>
+
+<br>Please write your short descrption for <b>Timer Mode One</b> here:<br>
+<pl-rich-text-editor file-name="timerModeOneDesc.html"></pl-rich-text-editor>
+    
+<br>Please write your short descrption for <b>Timer Mode Two</b> here:<br>
+<pl-rich-text-editor file-name="timeModeTwoDesc.html"></pl-rich-text-editor>
+    
+<br>Please write your short descrption for <b>Timer Mode Three</b> here:<br>
+<pl-rich-text-editor file-name="timerModeThreeDesc.html"></pl-rich-text-editor>
+
+<br>Please write your short descrption for <b>Timer Mode Four</b> here:<br>
+<pl-rich-text-editor file-name="timerModeFourDesc.html"></pl-rich-text-editor>
+
+<br>Please write your short descrption for <b>Timer Mode Five</b> here:<br>
+<pl-rich-text-editor file-name="timerModeFiveDesc.html"></pl-rich-text-editor>
+        
+<br>Please write your short descrption for <b>Timer Mode Six</b> here:<br>
+<pl-rich-text-editor file-name="timerModeSixDesc.html"></pl-rich-text-editor>

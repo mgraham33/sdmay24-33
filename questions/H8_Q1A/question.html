@@ -1,0 +1,24 @@
+<pl-question-panel>
+    <h1>ADC Subsystem</h1>
+    <p>
+        Answer the following question based on the following assumptions:
+        <ul>
+            <li>The ADC is a <b>{{params.bits}}-bit</b> ADC.</li>
+            <li>The ADC input range is from {{params.vmin}}V (V<sub>min</sub>) to {{params.vmax}}V (V<sub>max</sub>).</li>
+            <li>The ADC has M = 2<sup>n</sup> steps, where n is the number of ADC output bits.</li>
+        </ul>
+    </p>
+    <br>
+    <p>What is the resolution of the ADC in volts per bit (V/bit)?</p>
+    <p><pl-number-input answers-name="resolution" comparison="decdig" digits="3" display="block" suffix="V/bit" label="Resolution = "></pl-number-input></p>
+</pl-question-panel>
+
+<pl-answer-panel>
+    <p>
+        The correct answer is <b>{{params.answer}} V/bit</b>. The following diagram shows the process for a 10-bit ADC with V<sub>min</sub> of 0V and V<sub>max</sub> of 256V:
+    </p>
+    <pl-figure file-name="answerDiagram.png" alt="Answer Diagram"></pl-figure>
+    <p>
+        Slope is: (256-0) / (1024-0) = 0.25 V/bit
+    </p>
+</pl-answer-panel>

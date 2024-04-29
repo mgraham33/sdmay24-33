@@ -1,0 +1,66 @@
+{
+    "uuid": "b66b7293-766b-4fcc-83f2-80f8e26c6264",
+    "type": "Homework",
+    "title": "ARM and Assembly Basics",
+    "set": "Homework",
+    "module": "Assembly",
+    "number": "11",
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2023-10-14T00:00:01",
+            "endDate": "9999-04-01T23:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "General ARM Assembly",
+            "questions": [
+                {"id": "H11_Q1A", "manualPoints": 2},
+                {"id": "H11_Q1B", "points": 2},
+                {"id": "H11_Q1C", "points": 2, "maxPoints": 10},
+                {"id": "H11_Q1D", "autoPoints": 10},
+                {"id": "H11_Q1E", "points": 2, "maxPoints": 10}
+            ]
+        },
+        {
+            "title": "ARM Registers and Instruction Format",
+            "questions": [
+                {"id": "H11_Q2A", "points": 2, "maxPoints": 10},
+                {"id": "H11_Q2B", "points": 2, "maxPoints": 10}
+            ]
+        },
+        {
+            "title": "Status Register",
+            "questions": [
+                {"id": "H11_Q3A", "autoPoints": 10},
+                {"id": "H11_Q3B", "points": 2, "maxPoints": 10},
+                {"id": "H11_Q3C", "points": 2, "maxPoints": 10}
+            ]
+        },
+        {
+            "title": "MOVW vs MOVT",
+            "questions": [
+                {"id": "H11_Q4", "points": 2, "maxPoints": 10}
+            ]
+        },
+        {
+            "title": "Load and Store",
+            "questions": [
+                {"id": "H11_Q5A", "points": 2, "maxPoints": 10},
+                {"id": "H11_Q5B", "points": 2, "maxPoints": 10}
+            ]
+        },
+        {
+            "title": "Assembly Basics",
+            "questions": [
+                {"id": "H11_Q6A", "points": 2, "maxPoints": 10},
+                {"id": "H11_Q6B", "points": 2, "maxPoints": 10},
+                {"id": "H11_Q6C", "points": 2, "maxPoints": 10},
+                {"id": "H11_Q6DE", "points": 2, "maxPoints": 10}
+            ]
+        }
+    ],
+    "text": "<p style='color: red;'><b>Note: Assume 32-bit assembly format/encoding, unless otherwise specified.</b></p><p> <b>As indicated in class, the below readings will be important for the remainder of the semester:</b> <ul> <li> Textbook (read) <ul> <li>Chapter 2.1 - 2.3 and 2.6.1 - 2.6.2</li> <li>Chapter 4.1 - 4.3</li> </ul> </li> <li> <a href='http://class.ece.iastate.edu/cpre288/resources/docs/Thumb-2SupplementReferenceManual.pdf'>ARM Instruction Set Manual</a> (Scan) <ul> <li>Preface</li> <li>Chapter 3</li> <li>Chapter 4</li> </ul> </li> <li> <a href='http://class.ece.iastate.edu/cpre288/resources/docs/IHI0042F_aapcs.pdf'>ARM Procedure Call Standard</a> (Scan) <ul> <li>Section 5</li> <li>Section 7.1.1 - 7.1.2, 7.2</li> </ul> </li> <li><a href='http://class.ece.iastate.edu/cpre288/resources/docs/ARM-Inst_summary.pdf'>ARM Instruction Set Summary</a> (Read)</li> <li>Lecture slides (Review)</li> </ul></p>"
+}

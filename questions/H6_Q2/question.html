@@ -1,0 +1,57 @@
+<pl-question-panel>
+    <h1>The 'volatile' Keyword</h1>
+    <p>
+        When developing software for an embedded system, the keyword 'volatile' is often used. Read through the articles below and answer the following questions:
+    </p>
+    <p>
+        Jones, Nigel. "Introduction to the Volatile Keyword" Embedded Systems Programming, July 2001: <a href="https://www.embedded.com/introduction-to-the-volatile-keyword/">https://www.embedded.com/introduction-to-the-volatile-keyword/</a>
+    </p>
+    <p>
+        Wikipedia Article: <a href="https://en.wikipedia.org/wiki/Volatile_(computer_programming)">https://en.wikipedia.org/wiki/Volatile_(computer_programming)</a>
+    </p>
+    <p>
+        Based on the above articles, explain what unwanted behavior could occur if the 'volatile' keyword was <b>NOT</b> used for the variable 'clock_flag'
+        in the following code segment.
+    </p>
+    <pl-code language="c">
+volatile int clock_flag = 0;//Indicate Timer interrupt has fired
+
+// Timer 1 ISR that will be activated once per second
+My_TIMER1_HANDLER()
+{
+    clock_flag = 1;
+}
+
+// Drive robot and manage printing time to the LCD screen
+int main()
+{
+    Timer1_configure(); //Configure Timer 1 to fire once per second
+    while(1)
+    {
+        if(clock_flag == 1)
+        {
+            clock = 0;
+            // advance the clock, print new time to LCD screen
+        }
+        // Code for driving the robot
+        ...
+        ...
+    }
+}
+    </pl-code>
+</pl-question-panel>
+
+<pl-rich-text-editor file-name="answer.html"></pl-rich-text-editor>
+
+<pl-answer-panel>
+    <p>
+        If the volatile keyword is not used in this case, then the compiler may assume that since 
+        clock_flag is initialized to 0 and never modified by the code; it can then "optimize away"
+        the if statement and associated body. The compiler does this since 'clock_flag == 1' will
+        always evaluate to false when only considering the code here.
+    </p>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

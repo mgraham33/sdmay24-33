@@ -1,0 +1,60 @@
+<pl-question-panel>
+    <h1>Code Evaluation</h1>
+    <p>For each C code fragment, give the final value of the indicated variable after the code fragment is run. If the final value cannot be determine, then give N/A.</p>
+</pl-question-panel>
+
+<p>a. What is the final value of <b>ch</b>?</p>
+<pl-code language="C">unsigned char ch = {{params.a_ch}};
+ch = ch << {{params.a_shift}};</pl-code>
+<pl-string-input answers-name="a_ch" label="ch =" placeholder="hexadecimal" ignore-case="true"></pl-string-input>
+<br><br>
+<p>b. What is the final value of <b>short_ptr</b>?</p>
+<pl-code language="C">short my_short = {{params.b_ch}}; //Assume my_short is located at 0xFFFFFC00
+short *short_ptr;
+my_short = my_short >> {{params.b_shift}};
+short_ptr = &my_short;
+short_ptr++;
+</pl-code>
+
+<pl-string-input answers-name="b_short_ptr" label="short_ptr =" placeholder="hexadecimal" ignore-case="true"></pl-string-input>
+
+<br><br>
+<p>c. What is the final value of <b>my_short</b>?</p>
+<pl-code language="C">short my_short = {{params.c}}; //Assume my_short is located at 0xFFFFFFFE
+short *short_ptr;
+short_ptr = &my_short;
+short_ptr++;
+my_short++;
+if(short_ptr){
+&nbsp&nbspmy_short = 0x44;
+}
+else {
+&nbsp&nbspmy_short = 0x33;
+}
+</pl-code>
+
+<pl-string-input answers-name="c_my_short" label="my_short =" placeholder="hexadecimal" ignore-case="true"></pl-string-input>
+
+<br><br>
+<p>d. What is the final value of <b>flag</b>?</p>
+<pl-code language="C">signed char ch = {{params.d}};
+signed char flag = 0;
+ch--;
+if(50 > ch) {
+&nbsp&nbspflag = 1;
+}
+</pl-code>
+
+<pl-integer-input answers-name="d_flag" label="flag =" base="10" allow-blank=true blank-value=-999999></pl-integer-input>
+
+<br><br>
+<p>e. What is the final value of <b>ch</b>?</p>
+<pl-code language="C">unsigned char ch; //Assume ch is located at 0xFFFFFF00
+unsigned char *ch_ptr = 0xFFFF_AAAA;
+ch = (*ch_ptr) << {{params.e}};
+if(ch < 0x55){
+&nbsp&nbspch = 1;
+}
+</pl-code>
+
+<pl-integer-input answers-name="e_ch" label="ch =" base="10" allow-blank=true blank-value=-999999></pl-integer-input>

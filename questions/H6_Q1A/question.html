@@ -1,0 +1,42 @@
+<pl-question-panel>
+    <h1>Interrupt Configuration Registers</h1>
+    <p>
+        Give a brief explanation of the purpose of each of the following registers:
+        <ul>
+            <li>NVIC_ENx_R</li>
+            <li>GPIO_PORTx_IM_R</li>
+            <li>GPIO_PORTx_RIS_R</li>
+            <li>GPIO_PORTx_MIS_R</li>
+            <li>GPIO_PORTx_ICR_R</li>
+        </ul>
+    </p>
+</pl-question-panel>
+
+<pl-rich-text-editor file-name="answer.html"></pl-rich-text-editor>
+
+<pl-answer-panel>
+    <p>
+        <b>NVIC_ENx_R</b><br>
+        This register allows control over which devices' interrupts can be sent to the CPU.
+    </p>
+    <p>
+        <b>GPIO_PORTx_IM_R</b><br>
+        This register is used to indicate which GPIO interrupts have been locally enabled.
+    </p>
+    <p>
+        <b>GPIO_PORTx_RIS_R</b><br>
+        This register is used to indicate which GPIO interrupts have been locally detected
+    </p>
+    <p>
+        <b>GPIO_PORTx_MIS_R</b><br>
+        This register is used to indicate which GPIO interrupts have been locally detected, if they have also been locally enabled by the IM register.
+    </p>
+    <p>
+        <b>GPIO_PORTx_ICR_R</b><br>
+        This register clears the flags that indicate a specific GPIO interrupt has occurred (i.e. clears corresponding bits in the MIS and RIS registers)
+    </p>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

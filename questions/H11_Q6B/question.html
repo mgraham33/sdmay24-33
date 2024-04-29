@@ -1,0 +1,110 @@
+<pl-question-panel>
+    <h1>Assembly Basics</h1>
+</pl-question-panel>
+<p>
+    What is the difference in the functionality between the following instructions?
+</p>
+<pl-code>
+STR R{{params.dst}}, [R{{params.src}}], #{{params.inc}}
+STR R{{params.dst}}, [R{{params.src}}, #{{params.inc}}]!
+</pl-code>
+
+<p>
+    STR R{{params.dst}}, [R{{params.src}}], #{{params.inc}} : data from the address contained in 
+    <pl-dropdown answers-name="d0">
+        <pl-answer correct="false">R{{params.dst}}</pl-answer>
+        <pl-answer correct="true">R{{params.src}}</pl-answer>
+        <pl-answer correct="false">{{params.inc}}</pl-answer>
+        <pl-answer correct="false">{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.incwrong}}</pl-answer>
+    </pl-dropdown> 
+    will be placed in 
+    <pl-dropdown answers-name="d1">
+        <pl-answer correct="true">R{{params.dst}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}</pl-answer>
+        <pl-answer correct="false">{{params.inc}}</pl-answer>
+        <pl-answer correct="false">{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.incwrong}}</pl-answer>
+    </pl-dropdown> 
+    . Then, 
+    <pl-dropdown answers-name="d2">
+        <pl-answer correct="false">R{{params.dst}}</pl-answer>
+        <pl-answer correct="true">R{{params.src}}</pl-answer>
+        <pl-answer correct="false">{{params.inc}}</pl-answer>
+        <pl-answer correct="false">{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.incwrong}}</pl-answer>
+    </pl-dropdown> 
+    will be increased by 
+    <pl-dropdown answers-name="d3">
+        <pl-answer correct="false">R{{params.dst}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}</pl-answer>
+        <pl-answer correct="true">{{params.inc}}</pl-answer>
+        <pl-answer correct="false">{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.incwrong}}</pl-answer>
+    </pl-dropdown> 
+    .
+</p>
+
+<p>
+    STR R{{params.dst}}, [R{{params.src}}, #{{params.inc}}]! : data from the address contained in 
+    <pl-dropdown answers-name="d4">
+        <pl-answer correct="false">R{{params.dst}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}</pl-answer>
+        <pl-answer correct="false">{{params.inc}}</pl-answer>
+        <pl-answer correct="false">{{params.incwrong}}</pl-answer>
+        <pl-answer correct="true">R{{params.src}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.incwrong}}</pl-answer>
+    </pl-dropdown> 
+    will be placed in 
+    <pl-dropdown answers-name="d5">
+        <pl-answer correct="true">R{{params.dst}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}</pl-answer>
+        <pl-answer correct="false">{{params.inc}}</pl-answer>
+        <pl-answer correct="false">{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.incwrong}}</pl-answer>
+    </pl-dropdown> 
+    . Then, 
+    <pl-dropdown answers-name="d6">
+        <pl-answer correct="false">R{{params.dst}}</pl-answer>
+        <pl-answer correct="true">R{{params.src}}</pl-answer>
+        <pl-answer correct="false">{{params.inc}}</pl-answer>
+        <pl-answer correct="false">{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.incwrong}}</pl-answer>
+    </pl-dropdown> 
+    will be increased by 
+    <pl-dropdown answers-name="d7">
+        <pl-answer correct="false">R{{params.dst}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}</pl-answer>
+        <pl-answer correct="true">{{params.inc}}</pl-answer>
+        <pl-answer correct="false">{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.inc}}</pl-answer>
+        <pl-answer correct="false">R{{params.src}}+{{params.incwrong}}</pl-answer>
+        <pl-answer correct="false">R{{params.dst}}+{{params.incwrong}}</pl-answer>
+    </pl-dropdown> 
+    .
+</p>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

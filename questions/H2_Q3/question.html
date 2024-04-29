@@ -1,0 +1,107 @@
+<pl-question-panel>
+    <h>Fill in the given memory map after the C fragment below has been executed. Note: The TM4C123 uses Little Endian
+        ordering for memory
+        (i.e. lower significant bytes of an element are stored at lower addresses)</h>
+    <pl-code language="c" prevent-select="true">
+        char msg[4] = "Cat";
+        short age[3] = {0x2061, 0x{{params.secondletter}}{{params.firstletter}}, 0x616B};
+        long speed[1] = {0x65{{params.seventhletter}}{{params.sixthletter}}{{params.fifthletter}}};
+        msg[3] = 0x63;
+        age[0] = age[0] + 7;
+        age[1] = age[1] - {{params.randomint1}};
+        msg[13] = 0;
+        age[3] = 0x{{params.fourthletter}}{{params.thirdletter}};
+        printf("%s", msg);
+    </pl-code>
+    <b>
+        The table below shows the Memory Location, which array is using that location and the indexes of that array. You
+        need to fill in the value of that location.
+    </b>
+
+    <br>
+    <br>
+
+    <table BORDER=1 style="width: 5%">
+        <tr>
+            <td>0xFF00</td>
+            <td>0xFF01</td>
+            <td>0xFF02</td>
+            <td>0xFF03</td>
+        </tr>
+        <tr>
+            <td><pl-string-input answers-name="first" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="second" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="third" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="fourth" allow-blank=true></pl-string-input></td>
+        </tr>
+        <tr>
+            <td colspan="4" style="text-align: center">msg</td>
+        </tr>
+        <tr>
+        <tr>
+            <td style="text-align: center">0</td>
+            <td style="text-align: center">1</td>
+            <td style="text-align: center">2</td>
+            <td style="text-align: center">3</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table BORDER=1 style="width: 5%">
+        <tr>
+            <td>0xFF04</td>
+            <td>0xFF05</td>
+            <td>0xFF06</td>
+            <td>0xFF07</td>
+            <td>0xFF08</td>
+            <td>0xFF09</td>
+        </tr>
+        <tr>
+            <td><pl-string-input answers-name="fifth" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="sixth" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="seventh" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="eighth" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="ninth" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="tenth" allow-blank=true></pl-string-input></td>
+        </tr>
+        <tr>
+            <td colspan="6" style="text-align: center">age</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center">0</td>
+            <td colspan="2" style="text-align: center">1</td>
+            <td colspan="2" style="text-align: center">2</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table BORDER=1 style="width: 5%">
+        <tr>
+            <td>0xFF0A</td>
+            <td>0xFF0B</td>
+            <td>0xFF0C</td>
+            <td>0xFF0D</td>
+        </tr>
+        <tr>
+            <td><pl-string-input answers-name="eleventh" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="twelfth" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="thirteenth" allow-blank=true></pl-string-input></td>
+            <td><pl-string-input answers-name="fourteenth" allow-blank=true></pl-string-input></td>
+        </tr>
+        <tr>
+            <td colspan="4" style="text-align: center">speed</td>
+        </tr>
+        <tr>
+            <td colspan="4" style="text-align: center">0</td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+    <h>What message will $printf$ print for the above table?</h>
+    <br>
+    <pl-string-input answers-name="full" allow-blank=true></pl-string-input>
+</pl-question-panel>

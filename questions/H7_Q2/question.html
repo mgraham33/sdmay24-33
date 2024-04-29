@@ -1,0 +1,23 @@
+<pl-question-panel>
+    <h1>UART Basics</h1>
+    <p>
+        Sketch the logic waveform appearing at the output of the UART when it transmits a character '{{params.character}}'
+         at a baud rate of {{params.baudrate}}. The sketch should show the bit durations in microseconds, in addition to
+          the waveform. The frame format is of 1 start bit, 8 data bits, an odd parity bit, and 2 stop bits.
+    </p>
+    <p>What is the <b>data</b> rate of the UART configuration?</p>
+    <pl-integer-input 
+        answers-name="datarate" 
+        suffix="data bits / second" 
+        placeholder="(data rate)">
+    </pl-integer-input>
+    <pl-manual-grading-only>
+        <p><i>Note to grader: The student was given a character of '{{params.character}}' and baud rate of {{params.baudrate}}.</i></p>
+    </pl-manual-grading-only>
+    <br><br><br>
+    <pl-file-upload file-names="sketch.png"></pl-file-upload>
+</pl-question-panel>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

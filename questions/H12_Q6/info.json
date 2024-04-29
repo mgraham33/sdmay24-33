@@ -1,0 +1,18 @@
+{
+    "uuid": "70f9263d-98f1-4086-a8fa-5b1bd168e229",
+    "title": "Arraycopy",
+    "topic": "Assembly",
+    "tags": [
+        "wmhudson",
+        "fa23"
+    ],
+    "type": "v3",
+    "singleVariant": false,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/armgrader:v1.2",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

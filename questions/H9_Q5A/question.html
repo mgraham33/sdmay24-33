@@ -1,0 +1,31 @@
+<pl-question-panel>
+  <pl-figure file-name="CPRE288HW9Q5Prompt.png" directory="clientFilesQuestion" alt="Picture faild to load">
+  </pl-figure>
+
+  <p>Explain what causes the error in the measured distance.</p>
+</pl-question-panel>
+
+<p>Input Capture computes time from the number of clocks between events. If an event does not occur exactly on a
+  positive clock edge, then there will be error in the measured time.</p>
+<pl-multiple-choice answers-name="1" weight="1">
+  <pl-answer correct="true">True</pl-answer>
+  <pl-answer correct="false">False</pl-answer>
+</pl-multiple-choice>
+<br>
+
+<p>For example, if the “Sensor Detect” event happens right after a positive clock edge, then this time will be too long
+  by nearly 1 clk cycle. And if the “Laser activated” event happens right after a positive edge, then this time will be
+  too short by nearly 1 clk cycle.</p>
+<pl-multiple-choice answers-name="2" weight="1">
+  <pl-answer correct="true">True</pl-answer>
+  <pl-answer correct="false">False</pl-answer>
+</pl-multiple-choice>
+
+<br>
+<p>Thus a worst case time measurement error will occur when “Laser activated” occurs exactly on a positive edge of the
+  Timers clock, and “Sensor Detect” occurs right after a positive edge. This gives a maximum error in measuring time of
+  1 clk tick</p>
+<pl-multiple-choice answers-name="3" weight="1">
+  <pl-answer correct="true">True</pl-answer>
+  <pl-answer correct="false">False</pl-answer>
+</pl-multiple-choice>

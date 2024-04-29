@@ -1,0 +1,39 @@
+<pl-question-panel>
+  <p> Suppose that an TM4C123 is used with a pressure sensor to monitor the pressure exerted on a
+valve. The pressure sensor measures pressure from {{params.b}}psi (pounds per square inch) to
+{{params.a}}psi and converts it proportionally (i.e. linearly) to an electrical signal in the voltage range
+from 0V to {{params.c}}V. Assume the reference voltage (i.e. max voltage) for the TM4C123 ADC is 5V.
+</p>
+<p>a) If the gas pressure is {{params.d}}psi:</p>
+<p>i) what is the voltage level at the sensor’s output? (Round to 2 decimal places)</p>
+</pl-question-panel>
+<pl-string-input 
+    allow-blank=true
+    placeholder="decimal"   
+    answers-name="answer1"></pl-string-input>
+    <pl-question-panel>
+        <p>ii) What is the digital reading from the TM4C123 ADC?</p>
+    </pl-question-panel>
+
+<pl-string-input 
+    allow-blank=true 
+    placeholder="integer"
+    answers-name="answer2"></pl-string-input>
+    <pl-question-panel>
+        <p>b) If the digital reading was {{params.x1}}, the voltage must be x < Input Voltage < y (Round to 5 decimal places)</p>
+    </pl-question-panel>
+
+<pl-string-input allow-blank=true
+    placeholder="decimal"   
+    answers-name="answer3"
+    label="x"></pl-string-input>
+<pl-string-input allow-blank=true
+    placeholder="decimal"   
+    answers-name="answer4"
+    label="y"></pl-string-input>
+</pl-question-panel>
+
+
+
+
+

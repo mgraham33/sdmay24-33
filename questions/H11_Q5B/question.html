@@ -1,0 +1,18 @@
+<pl-question-panel>
+    <h1>Load and Store</h1>
+</pl-question-panel>
+<p>
+    Consider the following store instruction
+</p>
+<pl-code>
+STR R{{params.dst}}, [R{{params.src}}, #0x{{params.store}}]
+</pl-code>
+<p>
+    If R{{params.src}} has a value of {{params.start}}, then to what address will data be stored?
+</p>
+<p><pl-integer-input answers-name="addr" label="0x" placeholder="hexadecimal address" base="16"></pl-integer-input></p>
+
+<pl-answer-panel>
+    <p>This is because the instruction adds the immediate value to the source register before performing the store instruction.</p>
+</pl-answer-panel>
+

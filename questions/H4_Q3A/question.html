@@ -1,0 +1,64 @@
+<pl-question-panel>
+    <h1>Binary Operators</h1>
+    <h2>Part 1</h2>
+    <p>
+        For each of the following problems, write a one-liner of C code to perform the desired action.
+    </p>
+    <pl-code>
+        Example: For ch, check if bit 0 is set to 1
+        Answer: if (ch & 0x01) return 1;</pl-code>
+</pl-question-panel>
+<p>
+    <b>For unsigned char ch:</b> <br>
+    Check if ANY of bits {{params.q1a}} are SET to 1
+</p>
+<p><pl-string-input answers-name="q1" label="if (" suffix=")"></pl-string-input></p>
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+if (ch & {{params.ans_q1a}})</pl-code>
+</pl-answer-panel>
+<br>
+<p>
+    <b>For unsigned short n:</b><br>
+    SET bits {{params.q1bset}} to 1<br>
+    CLEAR bits {{params.q1bclear}} to 0<br>
+    TOGGLE bits {{params.q1btoggle}}<br>
+    and preserve the remaining bits.
+</p>
+<p><pl-string-input answers-name="q2" label="n = " suffix=";"></pl-string-input></p>
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+n = ((n | {{params.ans_set_q1b}}) & {{params.ans_clear_q1b}} ) ^ {{params.ans_toggle_q1b}};</pl-code>
+</pl-answer-panel>
+<br>
+<p>
+    <b>For unsigned short n, check:</b><br>
+    If ALL bits {{params.q1callset}} are SET to 1<br>
+    If ALL bits {{params.q1callclear}} are CLEARED to 0<br>
+    If ANY bits {{params.q1canyset}} are SET to 1<br>
+    If ANY bits {{params.q1canyclear}} are CLEARED to 0
+</p>
+<p><pl-string-input answers-name="q3" label="if (" suffix=")"></pl-string-input></p>
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+if (
+    (n & {{params.ans_all1_q1c}}) == {{params.ans_all1_q1c}} &&
+    (~n & {{params.ans_all0_q1c}}) == {{params.ans_all0_q1c}} &&
+    (n & {{params.ans_any1_q1c}}) && (~n & {{params.ans_any0_q1c}})
+)</pl-code>
+</pl-answer-panel>
+<br>
+<p>
+    <b>For unsigned char ch: </b><br>
+    ROTATE all bits to the right {{params.q1d}}.<br>
+    This is also known as a right-barrel-shift operation.
+</p>
+<p><pl-string-input answers-name="q4" label="ch = " suffix=";"></pl-string-input></p>
+<pl-answer-panel>
+    <pl-code language="c" prevent-select="true">
+ch = (ch >> {{params.ans_right_q1d}}) | (ch << {{params.ans_left_q1d}});</pl-code>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+</pl-submission-panel>

@@ -1,0 +1,92 @@
+<pl-question-panel>
+  The purpose of this question is to refresh your understanding of numeric representation from the prerequisite courses.
+Complete the table below.  Assume ASCII encoding of characters, and a 2’s complement encoding of negative numbers.  Recall what you have learned about 2’s complement encoding from other courses. When representing a number in hexadecimal or binary, use the proper number of digits for the TM4C123 architecture (depends on type of variable).
+</pl-question-panel><br>
+
+
+<style>
+    
+    th, td {
+      padding-top: 3px;
+    }
+    </style>
+
+
+
+
+
+<table style="white-space: nowrap;">
+        <tr style="text-align: center">
+            <td></td>
+            <td>x<sub>10</sub></td>
+            <td>x<sub>16</sub></td>
+            <td>x<sub>2</sub></td>
+        </tr>
+        <tr>
+            <td>{{params.nums}}</td>
+            <td><pl-integer-input answers-name="firstquestiondecimal" size="40" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="firstquestionhex" base="16" size="72" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="firstquestionbinary" base="2" size="66" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.capletter}}</td>
+            <td><pl-integer-input answers-name="secondquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="secondquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="secondquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.nums2}}</td>
+            <td><pl-integer-input answers-name="thirdquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="thirdquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="thirdquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.hexnums}}</td>
+            <td><pl-integer-input answers-name="fourthquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="fourthquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="fourthquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.binarynum}}</td>
+            <td><pl-integer-input answers-name="fifthquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="fifthquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="fifthquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.hexaddition}}</td>
+            <td><pl-integer-input answers-name="sixthquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="sixthquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="sixthquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.hexops}}</td>
+            <td><pl-integer-input answers-name="seventhquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="seventhquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="seventhquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.hexops2}}</td>
+            <td><pl-integer-input answers-name="eighthquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="eighthquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="eighthquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.nums3}}</td>
+            <td><pl-integer-input answers-name="ninthquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="ninthquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="ninthquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.nums4}}</td>
+            <td><pl-integer-input answers-name="tenthquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="tenthquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="tenthquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+        <tr>
+            <td>{{params.nums5}}</td>
+            <td><pl-integer-input answers-name="eleventhquestiondecimal" allow-blank="true" placeholder="Decimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="eleventhquestionhex" base="16" allow-blank="true" label="$0x$" placeholder="Hexadecimal"></pl-integer-input></td>
+            <td><pl-integer-input answers-name="eleventhquestionbinary" base="2" allow-blank="true" label="$0b$" placeholder="Binary"></pl-integer-input></td>
+        </tr>
+    </table>
+

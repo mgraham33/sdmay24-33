@@ -1,0 +1,18 @@
+{
+    "uuid": "c9519518-ed34-4384-8f23-ea35cf22dc76",
+    "title": "Interrupt based UART data processing Part 2",
+    "topic": "UART",
+    "tags": [
+        "sdmay24-33",
+        "mgraham"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "timeout": 100,
+        "entrypoint": "python3 /grade/tests/tests.py"
+    }
+}

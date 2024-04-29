@@ -1,0 +1,19 @@
+{
+    "uuid": "643ef956-9da2-4aa5-b7a7-82b44f3569d9",
+    "title": "H9 Question 4C",
+    "topic": "Template",
+    "tags": [
+        "sdmay24-33",
+        "ccosta22"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-c",
+        "entrypoint": "python3 /grade/tests/test.py",
+        "timeout": 40
+    }
+
+}

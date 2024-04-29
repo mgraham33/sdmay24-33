@@ -1,0 +1,18 @@
+<pl-question-panel>
+    <h1>Status Register</h1>
+</pl-question-panel>
+<p>
+    What is the difference between {{params.inst}} and {{params.inst}}S?
+</p>
+
+<pl-rich-text-editor file-name="answer.html"></pl-rich-text-editor>
+
+<pl-answer-panel>
+    <p>
+        The primary difference is {{params.inst}}<b>S</b> will update the status register, while {{params.inst}} will not.
+    </p>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

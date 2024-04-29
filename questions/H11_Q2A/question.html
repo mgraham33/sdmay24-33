@@ -1,0 +1,39 @@
+<pl-question-panel>
+    <h1>ARM Registers and Instruction Format</h1>
+</pl-question-panel>
+<p>
+    Briefly describe each ARM CPU register, including the status register (17 total).
+</p>
+<p>
+    For the status register, please also describe the Z, C, N, and V bits.
+</p>
+
+<pl-rich-text-editor file-name="answer.html"></pl-rich-text-editor>
+
+<pl-answer-panel>
+    <p>
+        <b>R0 - R15</b>: General Purpose registers for holding values to compute on.
+    </p>
+    <p>
+        <b>R13</b>: Called the Stack Pointer (SP), used to tore the location of the top of the stack.
+    </p>
+    <p>
+        <b>R14</b>: Called the Link Register (LR), used to store the program counter a function should return to after it completes execution.
+    </p>
+    <p>
+        <b>R15</b>: Called the Program Counter (PC), used to store the memory address of the current instruction being executed.
+    </p>
+    <p>
+        <b>Status Register</b>: This register gives information about the results of the last instruction executed. It is made up of a number of status flags. Four of which are:
+        <ul>
+            <li><b>Zero Flag (Z)</b>: Z is 1 if the result of an instruction is 0.</li>
+            <li><b>Carry Flag (C)</b>: C is 1 if the result of an instruction causes a carry or unsigned overflow to occur.</li>
+            <li><b>Negative Flag (N)</b>: N is 1 if the result of an instruction is negative (i.e. bit 31 is 1).</li>
+            <li><b>Overflow Flag (V)</b>: V is 1 if the result of an instruction caused a signed overflow.</li>
+        </ul>
+    </p>
+</pl-answer-panel>
+
+<pl-submission-panel>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>
